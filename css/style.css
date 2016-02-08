@@ -9,14 +9,13 @@ html, body{
     margin: auto;
     margin-top: 80px;
 }
-.txtSec, .imgSec{
+.txtSec, .imgSec, .txtRight{
     width: 600px;
 }
 .txtSec{
     float: left;
 }
 .txtRight{
-    width: 400px;
     margin-left: 200px;
 }
 .imgSec{
