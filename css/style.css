@@ -10,7 +10,7 @@ html, body{
 
 }
 .txtSec, .imgSec{
-    width: 500px;
+    width: 300px;
 }
 .txtSec{
     float: left;
@@ -27,7 +27,7 @@ html, body{
     position: absolute;
     padding: 20%;
 }
-.txt, .txtRef{
+.txt, .txtRef
     color: rgb(255, 206, 153);
 }
 .txt{
