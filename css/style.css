@@ -9,7 +9,15 @@ html, body{
     margin: 0;
 
 }
-
+.txtSec, .imgSec{
+    width: 50%;
+}
+.txt{
+    float: left;
+}
+.imgSec{
+    float: right;
+}
 #indexText{
     text-align: center;
     position: absolute;
@@ -19,5 +27,4 @@ html, body{
 .txt{
     font-size: 25px;
     color: rgb(255, 206, 153);
-
 }
