@@ -25,6 +25,7 @@ html, body{
 }
 .imgSec{
     float: right;
+    margin-top: 80px;
     margin-right: 300px;
 }
 #indexText{
