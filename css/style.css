@@ -5,8 +5,7 @@ html, body{
 #container{
     height: 1000px; 
     width: auto;
-    margin: auto;
-    padding: 0px;
+    margin: 0;
     background-color: rgb(46, 67, 77);
 }
 
