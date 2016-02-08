@@ -15,7 +15,13 @@ html, body{
 .txtSec{
     float: left;
     margin: 100px;
+    margin-left: 300px;
+}
+.txtRight{
     margin-left: 500px;
+}
+.txtLeft{
+    margin-left: 300px;
 }
 .imgSec{
     float: right;
