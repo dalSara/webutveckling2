@@ -14,6 +14,7 @@ html, body{
 }
 .txt{
     float: left;
+    padding: 40px;
 }
 .imgSec{
     float: right;
