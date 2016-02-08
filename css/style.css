@@ -14,8 +14,6 @@ html, body{
 }
 .txtSec{
     float: left;
-    margin-top: 100px;
-    margin-left: 300px;
 }
 .txtRight{
     margin-left: 500px;
@@ -25,8 +23,6 @@ html, body{
 }
 .imgSec{
     float: right;
-    margin-top: 80px;
-    margin-right: 300px;
 }
 #indexText{
     text-align: center;
