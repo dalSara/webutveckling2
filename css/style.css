@@ -15,6 +15,7 @@ html, body{
 .txtSec{
     float: left;
     margin: 100px;
+    left: 400px;
 }
 .imgSec{
     float: right;
