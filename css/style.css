@@ -3,7 +3,7 @@ html, body{
     background-color: rgb(46, 67, 77);
 }
 
-#container{
+.container{
     height: 1000px; 
     width: auto;
     margin: 0;
