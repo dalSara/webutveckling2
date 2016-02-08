@@ -10,7 +10,7 @@ html, body{
 
 }
 .txtSec, .imgSec{
-    width: 30%;
+    width: 400px;
 }
 .txtSec{
     float: left;
