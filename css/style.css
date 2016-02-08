@@ -17,6 +17,9 @@ html, body{
     margin: 100px;
     margin-left: 500px;
 }
+.txtRef{
+    font-size: 15px;
+}
 .imgSec{
     float: right;
 }
