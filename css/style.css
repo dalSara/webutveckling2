@@ -38,3 +38,8 @@ html, body{
 .txtRef{
     font-size: 15px;
 }
+.pageLinks{
+    text-decoration: none;
+    color: rgb(255, 90, 77);
+
+}
