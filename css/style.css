@@ -1,12 +1,13 @@
 html, body{
     margin: 0;
+    background-color: rgb(46, 67, 77);
 }
 
 #container{
     height: 1000px; 
     width: auto;
     margin: 0;
-    background-color: rgb(46, 67, 77);
+
 }
 
 #indexText{
