@@ -14,14 +14,10 @@ html, body{
 }
 .txtSec{
     float: left;
-<<<<<<< HEAD
     margin-top: 100px;
-=======
-    margin: 100px;
     margin-left: 300px;
 }
 .txtRight{
->>>>>>> 06f0ed70ff9d95340c82d948eb33f85a7ce540ed
     margin-left: 500px;
 }
 .txtLeft{
@@ -29,6 +25,7 @@ html, body{
 }
 .imgSec{
     float: right;
+    margin-right: 300px;
 }
 #indexText{
     text-align: center;
