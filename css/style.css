@@ -30,6 +30,7 @@ html, body{
 }
 .txt{
     font-size: 25px;
+    line-height: 15px;
 }
 .txtRef{
     font-size: 15px;
