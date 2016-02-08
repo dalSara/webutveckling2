@@ -17,9 +17,6 @@ html, body{
     margin: 100px;
     margin-left: 500px;
 }
-.txtRef{
-    font-size: 15px;
-}
 .imgSec{
     float: right;
 }
@@ -28,8 +25,12 @@ html, body{
     position: absolute;
     padding: 20%;
 }
-
+.txt, .txtRef{
+    color: rgb(255, 206, 153);
+}
 .txt{
     font-size: 25px;
-    color: rgb(255, 206, 153);
+}
+.txtRef{
+    font-size: 15px;
 }
