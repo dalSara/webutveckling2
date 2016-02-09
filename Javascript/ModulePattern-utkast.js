@@ -1,4 +1,4 @@
-//Module Pattern (Bare en start.. jag måste børja nånstans..=)
+//Module Pattern (Bare en start.. jag måste børja nånstans..=) endre gjerne.. er ikke sikker på vad jeg gør..)
 
 var IMAGEMODUL =(function(){}{
 
