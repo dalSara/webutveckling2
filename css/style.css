@@ -26,9 +26,18 @@ html, body{
     float: right;
 }
 
-.indexText{
+#indexText{
     position: absolute;
-    padding: 20%;
+    margin-top: 20%;
+}
+
+.indexTextLeft{
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.indexTextRight{
+    margin-right: 150px;
+    margin-left: 450px;
 }
 
 .txt, .txtRef{
