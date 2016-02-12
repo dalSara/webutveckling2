@@ -26,8 +26,7 @@ html, body{
     float: right;
 }
 
-#indexText{
-    text-align: center;
+.indexText{
     position: absolute;
     padding: 20%;
 }
