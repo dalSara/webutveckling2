@@ -26,10 +26,7 @@
 
         </section><!--end txtSec-->
 
-        <section class="imgSec">
-            <img src="../img/1.jpg" alt="Naked woman" height="800">
-
-        </section><!--end imgSec-->
+        <section class="imgSec"></section><!--end imgSec-->
 
     </div><!--end container-->
 
@@ -42,20 +39,14 @@
         $(".txtSec").mouseover(function () {
 
             var h = $(".txtSec").height();
-            var targetScrollTop = h - $(window).height();
+            var targetScrollTop = h + $(window).height();
             var distanceToTravel = targetScrollTop - $(window).scrollTop();
             var animationDuration = (distanceToTravel / distancePerSec) * 1000;
 
             $("html, body").animate({
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
-
-        }), function () {
-
-            // stop the animation
-            $("html, body").stop();
-
-        };
+        }
     })
 </script>
 
