@@ -33,5 +33,31 @@
 
     </div><!--end container-->
 
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        // change this value as per your need
+        var distancePerSec = 100;
+
+        $(".txtSec").mouseover(function () {
+
+            var h = $(".txtSec").height();
+            var targetScrollTop = h - $(window).height();
+            var distanceToTravel = targetScrollTop - $(window).scrollTop();
+            var animationDuration = (distanceToTravel / distancePerSec) * 1000;
+
+            $("html, body").animate({
+                scrollTop: targetScrollTop
+            }, animationDuration, 'linear');
+
+        }), function () {
+
+            // stop the animation
+            $("html, body").stop();
+
+        };
+    })
+</script>
+
 </body>
 </html>
