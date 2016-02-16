@@ -59,7 +59,7 @@ hatt de samme drømmene som mange barn har – og så har det gått galt.
             "box-shadow": "inset 10px 10px 49px 57px rgba(0,0,0,0.65)",
             });
 
-        alert('Your book is overdue.');
+
         $(function() {
             $("#spotlight").animate({
                 height: "150px",
@@ -68,12 +68,7 @@ hatt de samme drømmene som mange barn har – og så har det gått galt.
                 right: "-200%",
                 top: "-250%",
                 bottom: "-200%",  },
-                10000, 'linear',  function(){ //;
-
-
-                  //  });
-
-
+                10000, 'linear',  function(){
 
         var $mouseX = 0, $mouseY = 0;
         var $xp = 0, $yp = 0;
@@ -86,16 +81,13 @@ hatt de samme drømmene som mange barn har – og så har det gått galt.
 
 
            var $loop = setInterval(function(){
-             //change 12 to alter damping higher is slower
             $xp += (($mouseX - $xp)/2);
             $yp += (($mouseY - $yp)/2);
             $("#spotlight").css({left:($xp -2050)+'px',top:($yp -2050) +'px'});
             }, 10);
 
             })
-
-
-
+x
               });
 
     </script>
