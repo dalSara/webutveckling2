@@ -17,8 +17,8 @@ var IMAGEMODUL =(function(){
     var scrollTxt = function(){
         var distancePerSec = 50;
 
-        $(".txtSec").mouseover(function () {
-            var h = $(".txtSec").height();
+        $(".txt").mouseover(function () {
+            var h = $(".txt").height();
             var targetScrollTop = h + $(window).height();
             var distanceToTravel = targetScrollTop - $(window).scrollTop();
             var animationDuration = (distanceToTravel / distancePerSec) * 1000;
