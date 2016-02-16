@@ -8,7 +8,6 @@ var IMAGEMODUL =(function(){
         {"title": "3.jpg"},
         {"title": "4.jpg"},
         {"title": "5.jpg"}
-
     ]};
 
     var getImage = function(){
