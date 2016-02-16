@@ -3,11 +3,11 @@
 var IMAGEMODUL =(function(){
 
     var imagelistJSON = {imagelist:[
-        {"title": "1.jpg"},
-        {"title": "2.jpg"},
-        {"title": "3.jpg"},
-        {"title": "4.jpg"},
-        {"title": "5.jpg"}
+        {"imgSrc": "1.jpg"},
+        {"imgSrc": "2.jpg"},
+        {"imgSrc": "3.jpg"},
+        {"imgSrc": "4.jpg"},
+        {"imgSrc": "5.jpg"}
     ]};
 
     var getImage = function(){
