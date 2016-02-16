@@ -11,7 +11,7 @@ var IMAGEMODUL =(function(){
     ]};
 
     var getImage = function(){
-        return imagelistJSON.imagelist[index].title;
+        return imagelistJSON.imagelist[index].imgSrc;
     };
 
     var scrollTxt = function(){
