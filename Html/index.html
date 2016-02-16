@@ -57,9 +57,9 @@ hatt de samme drømmene som mange barn har – og så har det gått galt.
             "border": "2000px solid black",
             "position": "absolute",
             "box-shadow": "inset 10px 10px 49px 57px rgba(0,0,0,0.65)",
-            //"background-color": "red"
             });
 
+        alert('Your book is overdue.');
         $(function() {
             $("#spotlight").animate({
                 height: "150px",
@@ -68,12 +68,10 @@ hatt de samme drømmene som mange barn har – og så har det gått galt.
                 right: "-200%",
                 top: "-250%",
                 bottom: "-200%",  },
-                10000, 'linear', 4000);
-                    });
+                10000, 'linear',  function(){ //;
 
 
-
-
+                  //  });
 
 
 
@@ -94,6 +92,11 @@ hatt de samme drømmene som mange barn har – og så har det gått galt.
             $("#spotlight").css({left:($xp -2050)+'px',top:($yp -2050) +'px'});
             }, 10);
 
+            })
+
+
+
+              });
 
     </script>
     
