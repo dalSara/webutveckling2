@@ -18,17 +18,17 @@ html, body{
     width: 600px;
 }
 
-#txtSec, #indexTxtLeft{
+#txtSec, #indexTxtLeft, #indexTxtRight{
     float: left;
     z-index: 100;
-    position: absolute;
+    position: relative;
     color: rgb(255, 206, 153);
     font-size: 35px;
     line-height: 40px;
     font-family: "europa";
 }
 #indexTxtLeft{
-
+    width: 
     margin-right: 300px;
 }
 

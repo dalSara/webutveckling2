@@ -2,8 +2,6 @@ html, body{
     margin: 0;
     background-color: rgb(46, 67, 77);
     height: 100%;
-    position: relative;
-    overflow: hidden;
 }
 ::-webkit-scrollbar{
     display: none;

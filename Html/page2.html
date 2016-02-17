@@ -36,9 +36,9 @@
         // change this value as per your need
         var distancePerSec = 50;
 
-        $(".txt").mouseover(function () {
+        $(".txtSec").mouseover(function () {
 
-            var h = $(".txt").height();
+            var h = $(".txtSec").height();
             var targetScrollTop = h + $(window).height();
             var distanceToTravel = targetScrollTop - $(window).scrollTop();
             var animationDuration = (distanceToTravel / distancePerSec) * 1000;
