@@ -20,6 +20,7 @@ html, body{
 
 #txtSec{
     float: left;
+    width: 100%;
     z-index: 100;
     position: relative;
     color: rgb(255, 206, 153);
@@ -44,17 +45,6 @@ html, body{
 #txtRight{
     margin-left: 200px;
 }
-
-/*
-.txt, .txtRef{
-    color: rgb(255, 206, 153);
-}
-
-.txt{
-    font-size: 35px;
-    line-height: 40px;
-    font-family: "europa";
-}*/
 
 #txtRef{
     font-size: 15px;
