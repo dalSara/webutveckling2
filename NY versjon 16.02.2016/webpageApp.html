@@ -24,8 +24,8 @@
         
         <!--txtSec-->
         <section id="txtSec">
-            <div id="indexTxtLeft" class="txtLeft"></div>
-            <div id="indexTxtRight" class="txtRight"></div>
+            <div id="indexTxtLeft"></div>
+            <div id="indexTxtRight"></div>
             <div id="txtRef"></div>
         
         </section><!--end txtSec-->
@@ -117,21 +117,24 @@
         showStartPage: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
             var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            //var textsSide2 = TXTANDIMAGEMODUL.getTxt(0); Hnter ut heile objektet.
             
-            var $newText = $("<p>" + texts.txt1 + "</p>");
+            var $newText = $("<p>" + texts.txt1 + "</p>"); //txt1 henter vi frå lista i JSONList
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
+            var $newText3 = $("<p>" + texts.txt3 + "</p>");
             
-            WEBPAGEAPP.$indexTxtLeft.append($newText,$newText2);
-            //WEBPAGEAPP.$indexTxtRight.next().append($newText);
+            WEBPAGEAPP.$indexTxtLeft.prepend($newText);
+            WEBPAGEAPP.$indexTxtRight.append($newText2);
+            WEBPAGEAPP.$indexTxtLeft.clone().appendTo(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
         },//--end showStartPage
         
         showTxtRef: function(){
             var ref = WEBPAGEAPP.textRef;
-            var refText = TXTANDIMAGEMODUL.getTxtRef(ref);
+            var refTexts = TXTANDIMAGEMODUL.getTxtRef(ref);
             
-            var $newText = $("<p>" + refText + "</p>");
+            var $newRef = $("<p>" + refTexts + "</p>");
             
-            WEBPAGEAPP.$txtRef.append($newText);
+            WEBPAGEAPP.$txtRef.append($newRef);
         },//--end showRefTxt
 
         showText: function(){
@@ -152,7 +155,6 @@
             
             var $newImage = $("<img>")
                 .attr("src", filsti + bildeSrc)
-                /*.css({"left": startPosition, "opacity": "0"})*/
                 .animate({"left": "0px", "opacity": "1"}, 750/*, function(){
                     $(this).prevAll("img").remove();
                 }*/);
