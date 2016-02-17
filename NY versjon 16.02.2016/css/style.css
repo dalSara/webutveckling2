@@ -20,7 +20,7 @@ html, body{
 
 #txtSec{
     float: left;
-    width: 100%;
+    width: 1000px;
     z-index: 100;
     position: relative;
     color: rgb(255, 206, 153);
@@ -34,15 +34,7 @@ html, body{
     margin-bottom: 50px;
 }
 
-#indexTxtLeft{
-    margin-right: 300px;
-}
-
-#indexTxtRight{
-    margin-left: 200px;
-}
-
-#txtRight{
+#indexTxtRight, #txtRight{
     margin-left: 200px;
 }
 

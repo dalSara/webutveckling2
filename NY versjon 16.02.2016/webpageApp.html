@@ -125,7 +125,7 @@
             
             WEBPAGEAPP.$indexTxtLeft.prepend($newText);
             WEBPAGEAPP.$indexTxtRight.append($newText2);
-            WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
+            WEBPAGEAPP.$indexTxtLeft.clone("div").insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
         },//--end showStartPage
         
         showTxtRef: function(){
