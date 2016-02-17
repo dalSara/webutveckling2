@@ -1,4 +1,4 @@
-//Module Pattern (Bare en start.. jag måste børja nånstans..=) endre gjerne.. er ikke sikker på vad jeg gør..)
+//Module Pattern (Bare en start.. jag måste børja nånstans..=) endre gjerne.. 
 
 var TXTANDIMAGEMODUL = (function(){
 
@@ -61,10 +61,11 @@ var TXTANDIMAGEMODUL = (function(){
         ]
     };
 
+        // forløkke
     var getTxt = function(txtIndex){
         return webpageListJSON.txtList[txtIndex].txt1;
-        /*return webpageListJSON.txtList[txtIndex].txt2;/*
-        return webpageListJSON.txtList[txtIndex].txt3;
+        return webpageListJSON.txtList[txtIndex].txt2;
+        /*return webpageListJSON.txtList[txtIndex].txt3;
         return webpageListJSON.txtList[txtIndex].txt4;
         return webpageListJSON.txtList[txtIndex].txt5;
         return webpageListJSON.txtList[txtIndex].txt6*/
