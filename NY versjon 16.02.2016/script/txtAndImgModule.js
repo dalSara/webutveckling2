@@ -73,9 +73,9 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
-    /*var getTxtRef = function(ref){
+    var getTxtRef = function(ref){
         return webpageListJSON.txtList[ref].txtRef;
-    };*/
+    };
     
     var getImg = function(index){
         return webpageListJSON.imgList[index].imgSrc;
@@ -83,7 +83,7 @@ var TXTANDIMAGEMODUL = (function(){
 
     return{
         getTxt: getTxt,
-        //getTxtRef: getTxtRef,
+        getTxtRef: getTxtRef,
         getImg: getImg
     };
 }());//--end WEBPAGEIMAGESMODULE
