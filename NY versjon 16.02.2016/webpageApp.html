@@ -79,7 +79,7 @@
             
             var setPage = function(){
                 WA.showStartPage();
-                WA.showTxtRef();
+                //WA.showTxtRef();
                 //WA.showText();
                 //WA.showImage();
             }();
@@ -121,20 +121,22 @@
             var $newText = $("<p>" + texts.txt1 + "</p>"); //txt1 henter vi frå lista i JSONList
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
             var $newText3 = $("<p>" + texts.txt3 + "</p>");
+            var $newRefText = $("<p>" + texts.txtRef + "</p>");
             
             WEBPAGEAPP.$indexTxtLeft.prepend($newText);
             WEBPAGEAPP.$indexTxtRight.append($newText2);
             WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
+            WEBPAGEAPP.$txtRef.append($newRefText);
         },//--end showStartPage
         
-        showTxtRef: function(){
+        /*showTxtRef: function(){
             var refIndex = WEBPAGEAPP.textRef;
             var refs = TXTANDIMAGEMODUL.getTxtRef(refIndex);
             
             var $newRef = $("<p>" + refs + "</p>");
             
             WEBPAGEAPP.$txtRef.append($newRef);
-        },//--end showRefTxt
+        },//--end showRefTxt*/
 
         showText: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
