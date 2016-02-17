@@ -1,4 +1,6 @@
- $("#spotlight").css({
+var SPOTLIGHTMODULE = (function(){
+
+$("#spotlight").css({
             "width": "2000px",
             "height": "2000px",
             "left": "-2600px",
@@ -17,7 +19,7 @@
                 "left": "-1577px",
                 "top": "-1930px",
                 },
-                5000,
+                15000,
                 'linear',
                 function(){
 
@@ -39,3 +41,4 @@
                         })
 
                           });
+}());
