@@ -62,6 +62,13 @@ var TXTANDIMAGEMODUL = (function(){
     };
 
         // forløkke
+    /*
+    var showTxt = webpageListJSON.txtList.length;
+        for(var i = 0; i < showTxt; i++){
+            var  txtList = webpageListJSON.txtList[i].txtList;
+            */
+    
+    
     var getTxt = function(txtIndex){
         return webpageListJSON.txtList[txtIndex].txt1;
         return webpageListJSON.txtList[txtIndex].txt2;
