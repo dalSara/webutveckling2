@@ -6,7 +6,7 @@ html, body{
 ::-webkit-scrollbar{
     display: none;
 }
-#container, #indexTxtLeft{
+#container{
     width: 1200px;
     margin: auto;
     margin-top: 80px;
@@ -18,7 +18,7 @@ html, body{
     width: 600px;
 }
 
-#txtSec, #indexTxtLeft, #indexTxtRight{
+#txtSec{
     float: left;
     z-index: 100;
     position: relative;
@@ -27,14 +27,18 @@ html, body{
     line-height: 40px;
     font-family: "europa";
 }
+
+#indexTxtLeft, #indexTxtRight{
+    width: 1000px;
+    margin-bottom: 50px;
+}
+
 #indexTxtLeft{
-    width: 
     margin-right: 300px;
 }
 
-#indexTextRight{
-    margin-right: 150px;
-    margin-left: 450px;
+#indexTxtRight{
+    margin-left: 200px;
 }
 
 #txtRight{
