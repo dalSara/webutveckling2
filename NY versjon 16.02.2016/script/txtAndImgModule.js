@@ -71,11 +71,6 @@ var TXTANDIMAGEMODUL = (function(){
     
     var getTxt = function(txtIndex){
         return webpageListJSON.txtList[txtIndex];
-        /*return webpageListJSON.txtList[txtIndex].txt2;
-        /*return webpageListJSON.txtList[txtIndex].txt3;
-        return webpageListJSON.txtList[txtIndex].txt4;
-        return webpageListJSON.txtList[txtIndex].txt5;
-        return webpageListJSON.txtList[txtIndex].txt6*/
     };
     
     var getTxtRef = function(ref){
