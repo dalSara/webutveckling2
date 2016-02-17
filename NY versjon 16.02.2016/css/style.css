@@ -29,7 +29,7 @@ html, body{
     font-family: "europa";
 }
 
-#indexTxtLeft, #indexTxtRight{
+#indexTxtLeft, #indexTxtRight, #txtRef{
     width: 1000px;
     margin-bottom: 50px;
 }

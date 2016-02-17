@@ -27,7 +27,6 @@
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
             <div id="txtRef"></div>
-        
         </section><!--end txtSec-->
         
         <!--imgSec-->
@@ -51,10 +50,10 @@
         
         //HTML-objekter
         $indexTxtLeft: null,
-        $txtLeft: null,
         $indexTxtRight: null,
-        $txtRight: null,
         $txtRef: null,
+        $txtLeft: null,
+        $txtRight: null,
         $txtSec: null,
         $imgSec: null,
         
@@ -65,10 +64,10 @@
             
             var setElements = function(){
                 WA.$indexTxtLeft = $("#indexTxtLeft");
-                WA.$txtLeft = $("#txtLeft");
                 WA.$indexTxtRight = $("#indexTxtRight");
-                WA.$txtRight = $("#txtRight");
                 WA.$txtRef = $("txtRef");
+                WA.$txtLeft = $("#txtLeft");
+                WA.$txtRight = $("#txtRight");
                 WA.$txtSec = $("#txtSec");
                 WA.$imgSec = $("#imgSec");
             }();
@@ -125,14 +124,14 @@
             
             WEBPAGEAPP.$indexTxtLeft.prepend($newText);
             WEBPAGEAPP.$indexTxtRight.append($newText2);
-            WEBPAGEAPP.$indexTxtLeft.clone("div").insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
+            WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
         },//--end showStartPage
         
         showTxtRef: function(){
-            var ref = WEBPAGEAPP.textRef;
-            var refTexts = TXTANDIMAGEMODUL.getTxtRef(ref);
+            var refIndex = WEBPAGEAPP.textRef;
+            var refs = TXTANDIMAGEMODUL.getTxtRef(refIndex);
             
-            var $newRef = $("<p>" + refTexts + "</p>");
+            var $newRef = $("<p>" + refs + "</p>");
             
             WEBPAGEAPP.$txtRef.append($newRef);
         },//--end showRefTxt

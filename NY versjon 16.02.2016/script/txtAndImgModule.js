@@ -74,7 +74,7 @@ var TXTANDIMAGEMODUL = (function(){
     };
     
     var getTxtRef = function(ref){
-        return webpageListJSON.txtList[ref].txtRef;
+        return webpageListJSON.txtList[ref];
     };
     
     var getImg = function(index){
