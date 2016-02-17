@@ -116,12 +116,13 @@
         
         showStartPage: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
-            var text = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
             
-            var $newText = $("<p>" + text + "</p>");
+            var $newText = $("<p>" + texts.txt1 + "</p>");
+            var $newText2 = $("<p>" + texts.txt2 + "</p>");
             
-            WEBPAGEAPP.$indexTxtLeft.append($newText);
-            WEBPAGEAPP.$indexTxtRight.next().append($newText);
+            WEBPAGEAPP.$indexTxtLeft.append($newText,$newText2);
+            //WEBPAGEAPP.$indexTxtRight.next().append($newText);
         },//--end showStartPage
         
         showTxtRef: function(){
