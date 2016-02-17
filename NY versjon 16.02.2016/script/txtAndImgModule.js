@@ -73,8 +73,8 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
-    var getTxtRef = function(ref){
-        return webpageListJSON.txtList[ref].txtRef;
+    var getTxtRef = function(refIndex){
+        return webpageListJSON.txtList[refIndex].txtRef;
     };
     
     var getImg = function(index){

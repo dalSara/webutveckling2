@@ -11,7 +11,7 @@ html, body{
     margin: auto;
     margin-top: 80px;
 }
-/*#container img{
+/*#container img{ //I stede for background-img?
     position: absolute;
 }*/
 #txtSec, #imgSec, #txtRight{
@@ -29,7 +29,7 @@ html, body{
     font-family: "europa";
 }
 
-#indexTxtLeft, #indexTxtRight, #txtRef{
+#indexTxtLeft, #indexTxtRight{
     width: 1000px;
     margin-bottom: 50px;
 }
@@ -39,6 +39,8 @@ html, body{
 }
 
 #txtRef{
+    float: left;
+    position: relative;
     font-size: 15px;
 }
 
