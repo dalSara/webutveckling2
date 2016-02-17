@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Demonising</title>
+    
+    <!--<script>//For the font.
+        (function(d) {
+            var config = {
+                kitId: 'adc2ijs',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script><!--end font-->
+</head>
+
+<body>    
+    
+    <div id="container">
+        
+        <!--txtSec-->
+        <section id="txtSec">
+            <div id="indexTxtLeft" class="txtLeft"></div>
+            <div id="indexTxtRight" class="txtRight"></div>
+            <div id="txtRef"></div>
+        
+        </section><!--end txtSec-->
+        
+        <!--imgSec-->
+        <section id="imgSec"></section>
+    
+    </div><!--end container-->
+    
+    <!--scripts-->
+    <script src="script/txtAndImgModule.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+    <script>    
+    //APP pattern (Object literal)
+    var WEBPAGEAPP = {
+        
+        //variabler
+        textIndex: 0,
+        textRef: 0,
+        imageIndex: 0,
+        filstiBilder: "img/",
+        
+        //HTML-objekter
+        $indexTxtLeft: null,
+        $txtLeft: null,
+        $indexTxtRight: null,
+        $txtRight: null,
+        $txtRef: null,
+        $txtSec: null,
+        $imgSec: null,
+        
+        //init-funksjoner
+        init: function(){
+            
+            var WA = WEBPAGEAPP;            
+            
+            var setElements = function(){
+                WA.$indexTxtLeft = $("#indexTxtLeft");
+                WA.$txtLeft = $("#txtLeft");
+                WA.$indexTxtRight = $("#indexTxtRight");
+                WA.$txtRight = $("#txtRight");
+                WA.$txtRef = $("txtRef");
+                WA.$txtSec = $("#txtSec");
+                WA.$imgSec = $("#imgSec");
+            }();
+            
+            var setEvents = function(){
+                /*WA.$lastWord.click(WA.showNextImg);*/
+                /*WA.$lastWord.click(WA.showImage);*/
+            }();
+            
+            var setPage = function(){
+                WA.showStartPage();
+                WA.showTxtRef();
+                //WA.showText();
+                //WA.showImage();
+            }();
+            
+        }, //--end init
+        
+        //app-logikk og støttefunksjoner
+        /*showPreviousImg: function(){
+            
+            var WA = WEBPAGEAPP;
+            
+            if(WA.imageIndex > 0 ){
+                WA.imageIndex--;
+            }else{
+                WA.imageIndex = TXTANDIMAGEMODUL.getNumberOfImages() - 1;
+            }
+            
+            WA.showImage("-500px");
+        }, //--end showPreviousImage
+        
+        showNextImg: function(){
+            
+            var WA = WEBPAGEAPP;
+            
+            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
+                WA.imageIndex++;
+            }else{
+                WA.imageIndex = 0;
+            }
+            
+            WA.showImage("500px");
+        },*/ //--end showNextImage        
+        
+        showStartPage: function(){
+            var txtIndex = WEBPAGEAPP.textIndex;
+            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            
+            var $newText = $("<p>" + texts.txt1 + "</p>");
+            var $newText2 = $("<p>" + texts.txt2 + "</p>");
+            
+            WEBPAGEAPP.$indexTxtLeft.append($newText,$newText2);
+            //WEBPAGEAPP.$indexTxtRight.next().append($newText);
+        },//--end showStartPage
+        
+        showTxtRef: function(){
+            var ref = WEBPAGEAPP.textRef;
+            var refText = TXTANDIMAGEMODUL.getTxtRef(ref);
+            
+            var $newText = $("<p>" + refText + "</p>");
+            
+            WEBPAGEAPP.$txtRef.append($newText);
+        },//--end showRefTxt
+
+        showText: function(){
+            var txtIndex = WEBPAGEAPP.textIndex;
+            var text = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            
+            var $newText = $("<p>" + text + "</p>");
+            
+            WEBPAGEAPP.$txtSec.append($newText);
+        },//--end showImage
+        
+        showImage: function(){
+            
+            var index = WEBPAGEAPP.imageIndex;
+            var filsti = WEBPAGEAPP.filstiBilder;
+            
+            var bildeSrc = TXTANDIMAGEMODUL.getImg(index);
+            
+            var $newImage = $("<img>")
+                .attr("src", filsti + bildeSrc)
+                /*.css({"left": startPosition, "opacity": "0"})*/
+                .animate({"left": "0px", "opacity": "1"}, 750/*, function(){
+                    $(this).prevAll("img").remove();
+                }*/);
+            
+            WEBPAGEAPP.$imgSec.append($newImage);
+            
+        },//--end showImage
+        
+        scrollTxt: function(){
+            var distancePerSec = 50;
+
+            $("$txtSec").mouseover(function () {
+                var h = $("$txtSec").height();
+                var targetScrollTop = h + $(window).height();
+                var distanceToTravel = targetScrollTop - $(window).scrollTop();
+                var animationDuration = (distanceToTravel / distancePerSec) * 1000;
+                
+                $("html, body").animate({
+                    scrollTop: targetScrollTop
+                }, animationDuration, 'linear');
+            }
+        )}
+    };//--end WEBPAGEWAPP
+    
+    //document.ready trigger vår WEBPAGEAPP når DOM er klart
+    $(function(){
+        WEBPAGEAPP.init();        
+    });   
+        
+    </script>
+    
+</body>
+    
+</html>
