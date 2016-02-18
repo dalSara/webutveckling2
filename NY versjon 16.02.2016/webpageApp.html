@@ -24,7 +24,6 @@
         
         <!--txtSec-->
         <section id="txtSec">
-            <div id="txtRefer"></div>
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
             <div id="txtRefer"></div>
@@ -67,7 +66,7 @@
             var setElements = function(){
                 WA.$indexTxtLeft = $("#indexTxtLeft");
                 WA.$indexTxtRight = $("#indexTxtRight");
-                WA.$txtRefer = $("txtRefer");
+                WA.$txtRefer = $("#txtRefer");
                 WA.$txtLeft = $("#txtLeft");
                 WA.$txtRight = $("#txtRight");
                 WA.$txtSec = $("#txtSec");
@@ -82,7 +81,7 @@
             
             var setPage = function(){
                 WA.showStartPage();
-                //WA.showTxtRef();
+                WA.showTxtRef();
                 //WA.showText();
                 //WA.showImage();
      
@@ -102,7 +101,7 @@
             }
             
             WA.showImage("-500px");
-        }, //--end showPreviousImage
+        },*/ //--end showPreviousImage
         
         showNextImg: function(){
             
@@ -112,10 +111,9 @@
                 WA.imageIndex++;
             }else{
                 WA.imageIndex = 0;
-            }
-            
+            } 
             WA.showImage("500px");
-        },*/ //--end showNextImage        
+        }, //--end showNextImage        
         
         showStartPage: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
@@ -125,9 +123,7 @@
             var $newText = $("<p>" + texts.txt1 + "</p>"); //txt1 henter vi frå lista i JSONList
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
             var $newText3 = $("<p>" + texts.txt3 + "</p>");
-            var $newRefText1 = $("<p>" + texts.txtRef + "</p>");
-            
-            WEBPAGEAPP.$txtRefer.prepend($newRefText1);
+
             WEBPAGEAPP.$indexTxtLeft.prepend($newText);
             WEBPAGEAPP.$indexTxtRight.append($newText2);
             WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
@@ -138,9 +134,9 @@
             var refIndex = WEBPAGEAPP.textRef;
             var refs = TXTANDIMAGEMODUL.getTxtRef(refIndex);
             
-            var $newRef = $("<p>" + refs.textRef + "</p>");
+            var $newRef = $("<p>" + refs + "</p>");
             
-            WEBPAGEAPP.$txtRef.append($newRef);
+            WEBPAGEAPP.$txtRefer.append($newRef);
         },//--end showRefTxt
 
         showText: function(){

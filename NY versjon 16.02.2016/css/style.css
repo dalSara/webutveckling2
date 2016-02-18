@@ -39,10 +39,8 @@ html, body{
 }
 
 #txtRefer{
-    float: left;
-    position: relative;
-    font-size: 15px;
-    width: 1000px;
+    font-size: 20px;
+    font-style: oblique;
 }
 
 #pageLinks{

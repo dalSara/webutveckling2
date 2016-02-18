@@ -80,11 +80,16 @@ var TXTANDIMAGEMODUL = (function(){
     var getImg = function(index){
         return webpageListJSON.imgList[index].imgSrc;
     };
+    
+    var getNumberOfImages = function(){
+        return webpageListJSON.imgList.length;
+    };
 
     return{
         getTxt: getTxt,
         getTxtRef: getTxtRef,
-        getImg: getImg
+        getImg: getImg,
+        getNumberOfImages: getNumberOfImages
     };
 }());//--end WEBPAGEIMAGESMODULE
 
