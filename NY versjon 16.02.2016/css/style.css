@@ -51,7 +51,7 @@ html, body{
     color: rgb(50, 50, 50);
 }
 #imgSec{
-    float: right;
+    /*float: right;
     /*background-image: url(../img/1.jpg);*/
     position: fixed;
     height: 800px;

@@ -75,15 +75,16 @@
             
             var setEvents = function(){
                 WA.$txtSec.mouseover(WA.scrollTxt);
+                WA.$imgSec.click(WA.showNextImg);
                 /*WA.$lastWord.click(WA.showNextImg);*/
                 /*WA.$lastWord.click(WA.showImage);*/
             }();
             
             var setPage = function(){
-                WA.showStartPage();
-                WA.showTxtRef();
+                //WA.showStartPage();
+                //WA.showTxtRef();
                 //WA.showText();
-                //WA.showImage();
+                WA.showImage();
      
             }();
             
@@ -104,7 +105,6 @@
         },*/ //--end showPreviousImage
         
         showNextImg: function(){
-            
             var WA = WEBPAGEAPP;
             
             if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
@@ -112,7 +112,7 @@
             }else{
                 WA.imageIndex = 0;
             } 
-            WA.showImage("500px");
+            WA.showImage();
         }, //--end showNextImage        
         
         showStartPage: function(){
@@ -157,9 +157,9 @@
             
             var $newImage = $("<img>")
                 .attr("src", filsti + bildeSrc)
-                .animate({"left": "0px", "opacity": "1"}, 750/*, function(){
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
                     $(this).prevAll("img").remove();
-                }*/);
+                });
             
             WEBPAGEAPP.$imgSec.append($newImage);
             
