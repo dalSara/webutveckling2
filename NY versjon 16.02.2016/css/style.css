@@ -38,10 +38,11 @@ html, body{
     margin-left: 200px;
 }
 
-#txtRef{
+#txtRefer{
     float: left;
     position: relative;
     font-size: 15px;
+    width: 1000px;
 }
 
 #pageLinks{
