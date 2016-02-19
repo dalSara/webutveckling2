@@ -24,13 +24,17 @@
         
         <!--txtSec-->
         <section id="txtSec">
-            <div id="indexTxtLeft" class="txtLeft"></div>
-            <div id="indexTxtRight" class="txtRight"></div>
+            <!--First page-->
+            <div id="indexTxtLeft"></div>
+            <div id="indexTxtRight"></div>
             
-            <!--<div class="txtLeft"></div>
-            <!--<div class="txtRight"></div>
-            <div class="txtLeft"></div>
-            <div class="txtRight"></div>-->
+            <!--Next pages-->
+            <div id="txtLeft_1" class="txtLeft"></div>
+            <div id="txtRight_2" class="txtRight"></div>
+            <div id="txtLeft_3" class="txtLeft"></div>
+            <div id="txtRight_4" class="txtRight"></div>
+            <div id="txtLeft_5" class="txtLeft"></div>
+            <div id="txtRight_6" class="txtRight"></div>
             
             <div id="txtRefer"></div>
         </section><!--end txtSec-->
@@ -58,8 +62,14 @@
         //HTML-objekter
         $indexTxtLeft: null,
         $indexTxtRight: null,
-        $txtLeft: null,
-        $txtRight: null,
+        
+        $txtLeft_1: null,
+        $txtRight_2: null,
+        $txtLeft_3: null,
+        $txtRight_4: null,
+        $txtLeft_5: null,
+        $txtRight_6: null,
+        
         $txtRefer: null,
         $txtSec: null,
         $imgSec: null,
@@ -72,27 +82,32 @@
             var setElements = function(){
                 WA.$indexTxtLeft = $("#indexTxtLeft");
                 WA.$indexTxtRight = $("#indexTxtRight");
-                WA.$txtLeft = $(".txtLeft");
-                WA.$txtRight = $(".txtRight");
+                
+                WA.$txtLeft_1 = $("#txtLeft_1");
+                WA.$txtRight_2 = $("#txtRight_2");
+                WA.$txtLeft_3 = $("#txtLeft_3");
+                WA.$txtRight_4 = $("#txtRight_4");
+                WA.$txtLeft_5 = $("#txtLeft_5");
+                WA.$txtRight_6 = $("#txtRight_6");
+                
                 WA.$txtRefer = $("#txtRefer");
                 WA.$txtSec = $("#txtSec");
                 WA.$imgSec = $("#imgSec");
             }();
             
             var setEvents = function(){
-                //WA.$txtSec.mouseover(WA.scrollTxt);
+                WA.$txtSec.mouseover(WA.scrollTxt);
                 WA.$imgSec.click(WA.showNextImg);
                 /*WA.$lastWord.click(WA.showNextImg, );*/
                 /*WA.$lastWord.click(WA.showTxt);*/
             }();
             
             var setPage = function(){
-                WA.showStartPage();
+                //WA.showStartPage();
                 //WA.setLinkOnTheLastWord();
-                //TXTANDIMAGEMODUL.getLastIndex();
-                WA.showTxtRef();
-                //WA.showImage();
-                //WA.showText();
+                //WA.showTxtRef();
+                WA.showText();
+                WA.showImage();
                 //WA.setLinkOnTheLastWord();
             }();
             
@@ -145,19 +160,19 @@
             var $newText6 = $("<p>" + textsPage2.txt6 + "</p>");
           
             //if(TXTANDIMAGEMODUL.txt1 == true){
-            WEBPAGEAPP.$txtLeft.append($newText1);
-            WEBPAGEAPP.$txtRight.append($newText2);
-            /*WEBPAGEAPP.$txtLeft.last().append($newText3);
-            WEBPAGEAPP.$txtRight.last().append($newText4);
-            WEBPAGEAPP.$txtLeft.last().append($newText5);
-            WEBPAGEAPP.$txtRight.last().append($newText6);*/
+            WEBPAGEAPP.$txtLeft_1.append($newText1);
+            WEBPAGEAPP.$txtRight_2.append($newText2);
+            WEBPAGEAPP.$txtLeft_3.append($newText3);
+            WEBPAGEAPP.$txtRight_4.append($newText4);
+            WEBPAGEAPP.$txtLeft_5.append($newText5);
+            WEBPAGEAPP.$txtRight_6.append($newText6);
             
             //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
             
-            WEBPAGEAPP.$txtLeft.clone().insertAfter("div.txtRight").replaceWith($newText3);
+            /*WEBPAGEAPP.$txtLeft.clone().insertAfter($newText2).replaceWith($newText3);
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText3).replaceWith($newText4);
             WEBPAGEAPP.$txtLeft.clone().insertAfter($newText4).replaceWith($newText5);
-            WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);
+            WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);*/
             //else/if settning for å få alle sidene?
             //}
 
@@ -177,6 +192,8 @@
                 });
             
             WEBPAGEAPP.$imgSec.append($newImage);
+            
+            WEBPAGEAPP.showNextRef();
             
         },//--end showImage
         
