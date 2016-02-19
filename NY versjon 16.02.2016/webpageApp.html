@@ -88,7 +88,7 @@
             
             var setPage = function(){
                 WA.showStartPage();
-                WA.setLinkOnTheLastWord();
+                //WA.setLinkOnTheLastWord();
                 //TXTANDIMAGEMODUL.getLastIndex();
                 //WA.showTxtRef();
                 //WA.showImage();
@@ -100,6 +100,7 @@
         
         //App-logikk og støttefunksjoner
         showStartPage: function(){
+            var WA = WEBPAGEAPP;
             var txtIndex = WEBPAGEAPP.textIndex;
             var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
             
@@ -107,11 +108,16 @@
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
             var $newText3 = $("<p>" + texts.txt3 + "</p>");
 
-            WEBPAGEAPP.$indexTxtLeft.prepend($newText1);
-            WEBPAGEAPP.$indexTxtRight.append($newText2);
-            WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
+            WA.$indexTxtLeft.prepend($newText1);
+            WA.$indexTxtRight.append($newText2);
             
-            TXTANDIMAGEMODUL.getLastIndex();
+            //Last word:
+            var sisteOrdArray = texts.txt3.split(" ");
+        
+            for(var i = 0; i < sisteOrdArray.length - 1; i++){
+                WA.$txtSec.append(sisteOrdArray[i] + " ");
+            }
+           WA.$txtSec.append("<a>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>"); //--end Last word  
             
         },//--end showStartPage
         
@@ -223,19 +229,15 @@
         }, //end scrollTxt
         
         setLinkOnTheLastWord: function() {
-            //var listOfText = WEBPAGEAPP.showStartPage();
-            //WEBPAGEAPP.$txtSec.text().replace(/(\w+?)$/, '<span id="lastWord">$1</span>');
             var WA = WEBPAGEAPP; 
-
-            var lastText = TXTANDIMAGEMODUL.getLastIndex();
-            //var setningJSON = {"tekst": "Dette er en tekst"};        
-            var sisteOrdArray = lastText.split(" ");        
+            
+            var setningJSON = {"tekst": "Dette er en tekst"};
+            var sisteOrdArray = setningJSON.tekst.split(" ");
         
             for(var i = 0; i < sisteOrdArray.length; i++){
                 WA.$txtSec.append(sisteOrdArray[i] + " ");
             }
-           WA.$txtSec.append("<a href='http://aftenposten.no'>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>")
-               .css({ color: "red"});   
+           WA.$txtSec.append("<a href='http://aftenposten.no'>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>");   
         } //end setLinkOnTheLastWord
     }; //--end WEBPAGEWAPP
     

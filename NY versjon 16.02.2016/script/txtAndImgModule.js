@@ -61,20 +61,12 @@ var TXTANDIMAGEMODUL = (function(){
         ]
     };
 
-        // forløkke
-    /*
-    var showTxt = webpageListJSON.txtList.length;
-        for(var i = 0; i < showTxt; i++){
-            var  txtList = webpageListJSON.txtList[i].txtList;
-            */
-    
-    
     var getTxt = function(txtIndex){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
-    var getLastIndex = function(){       
-        return webpageListJSON.txtList.lastIndexOf();
+    var getLastText = function(){       
+        return webpageListJSON.txtList.last();
     };
     
     var getNumberOfTexts = function(){
@@ -99,7 +91,7 @@ var TXTANDIMAGEMODUL = (function(){
 
     return{
         getTxt: getTxt,
-        getLastIndex: getLastIndex,
+        getLastText: getLastText,
         getNumberOfTexts: getNumberOfTexts,
         getTxtRef: getTxtRef,
         //getNumberOfRefs: getNumberOfRefs,
