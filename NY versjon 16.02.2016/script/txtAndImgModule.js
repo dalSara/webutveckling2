@@ -73,6 +73,10 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
+    var getLastIndex = function(){       
+        return webpageListJSON.txtList.lastIndexOf();
+    };
+    
     var getNumberOfTexts = function(){
         return webpageListJSON.txtList.length - 1;
     };
@@ -81,9 +85,9 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[refIndex].txtRef;
     };
     
-    var getNumberOfRefs = function(){
-        return webpageListJSON.txtList.txtRef.length;
-    };
+    /*var getNumberOfRefs = function(){
+        return webpageListJSON.txtList.txtRef.length; //Dette går ikkje (length)
+    };*/
     
     var getImg = function(index){
         return webpageListJSON.imgList[index].imgSrc;
@@ -95,9 +99,10 @@ var TXTANDIMAGEMODUL = (function(){
 
     return{
         getTxt: getTxt,
+        getLastIndex: getLastIndex,
         getNumberOfTexts: getNumberOfTexts,
         getTxtRef: getTxtRef,
-        getNumberOfRefs: getNumberOfRefs,
+        //getNumberOfRefs: getNumberOfRefs,
         getImg: getImg,
         getNumberOfImages: getNumberOfImages
     };

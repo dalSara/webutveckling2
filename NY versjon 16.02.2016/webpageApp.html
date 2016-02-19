@@ -87,10 +87,13 @@
             }();
             
             var setPage = function(){
-                //WA.showStartPage();
+                WA.showStartPage();
+                WA.setLinkOnTheLastWord();
+                //TXTANDIMAGEMODUL.getLastIndex();
                 //WA.showTxtRef();
-                WA.showImage();
-                WA.showText();
+                //WA.showImage();
+                //WA.showText();
+                //WA.setLinkOnTheLastWord();
             }();
             
         }, //--end init
@@ -107,6 +110,8 @@
             WEBPAGEAPP.$indexTxtLeft.prepend($newText1);
             WEBPAGEAPP.$indexTxtRight.append($newText2);
             WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
+            
+            TXTANDIMAGEMODUL.getLastIndex();
             
         },//--end showStartPage
         
@@ -144,7 +149,7 @@
             
             //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
             
-            WEBPAGEAPP.$txtLeft.clone("div").insertAfter("div.txtRight").replaceWith($newText3);
+            WEBPAGEAPP.$txtLeft.clone().insertAfter("div.txtRight").replaceWith($newText3);
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText3).replaceWith($newText4);
             WEBPAGEAPP.$txtLeft.clone().insertAfter($newText4).replaceWith($newText5);
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);
@@ -182,6 +187,17 @@
             WA.showImage();
         }, //--end showNextImage 
         
+        showNextPageOfText: function(){
+            var WA = WEBPAGEAPP;
+            
+            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
+                WA.textRef++;
+            }else{
+                WA.textRef = 0;
+            } 
+            WA.showText();
+        }, //--end showNextRef   
+        
         showNextRef: function(){
             var WA = WEBPAGEAPP;
             
@@ -204,8 +220,24 @@
             $("html, body").animate({
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
-        } //end scrollTxt
-    };//--end WEBPAGEWAPP
+        }, //end scrollTxt
+        
+        setLinkOnTheLastWord: function() {
+            //var listOfText = WEBPAGEAPP.showStartPage();
+            //WEBPAGEAPP.$txtSec.text().replace(/(\w+?)$/, '<span id="lastWord">$1</span>');
+            var WA = WEBPAGEAPP; 
+
+            var lastText = TXTANDIMAGEMODUL.getLastIndex();
+            //var setningJSON = {"tekst": "Dette er en tekst"};        
+            var sisteOrdArray = lastText.split(" ");        
+        
+            for(var i = 0; i < sisteOrdArray.length; i++){
+                WA.$txtSec.append(sisteOrdArray[i] + " ");
+            }
+           WA.$txtSec.append("<a href='http://aftenposten.no'>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>")
+               .css({ color: "red"});   
+        } //end setLinkOnTheLastWord
+    }; //--end WEBPAGEWAPP
     
     //document.ready trigger vår WEBPAGEAPP når DOM er klart
     $(function(){

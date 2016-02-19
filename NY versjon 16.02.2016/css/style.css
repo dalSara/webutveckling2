@@ -48,11 +48,11 @@ html, body{
     font-style: oblique;
 }
 
-#pageLinks{
+#lastWrod{
     text-decoration: none;
     color: rgb(255, 90, 77);
 }
-#pageLinks:hover{
+#lastWord:hover{
     color: rgb(50, 50, 50);
 }
 #imgSec{
