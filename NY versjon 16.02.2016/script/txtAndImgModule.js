@@ -77,6 +77,10 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[refIndex].txtRef;
     };
     
+    var getNumberOfTexts = function(){
+        return webpageListJSON.txtList.length;
+    };
+    
     var getImg = function(index){
         return webpageListJSON.imgList[index].imgSrc;
     };
@@ -88,6 +92,7 @@ var TXTANDIMAGEMODUL = (function(){
     return{
         getTxt: getTxt,
         getTxtRef: getTxtRef,
+        getNumberOfTexts: getNumberOfTexts,
         getImg: getImg,
         getNumberOfImages: getNumberOfImages
     };
