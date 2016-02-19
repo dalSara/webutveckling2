@@ -34,8 +34,13 @@ html, body{
     margin-bottom: 50px;
 }
 
-#indexTxtRight, #txtRight{
+#indexTxtRight, .txtRight{
     margin-left: 200px;
+}
+
+.txtLeft, .txtRight{
+   
+    position: static;
 }
 
 #txtRefer{

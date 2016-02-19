@@ -28,7 +28,7 @@
             <div id="indexTxtRight" class="txtRight"></div>
             
             <!--<div class="txtLeft"></div>
-            <div class="txtRight"></div>
+            <!--<div class="txtRight"></div>
             <div class="txtLeft"></div>
             <div class="txtRight"></div>-->
             
@@ -142,17 +142,23 @@
             var $newText5 = $("<p>" + textsPage2.txt5 + "</p>");
             var $newText6 = $("<p>" + textsPage2.txt6 + "</p>");
             
+            /*WEBPAGEAPP.$txtLeft.addClass("txtLeft");
+            WEBPAGEAPP.$txtRight.addClass("txtRight");*/
+            
             //if(TXTANDIMAGEMODUL.txt1 == true){
-            WEBPAGEAPP.$txtLeft.first().append($newText1);
-            WEBPAGEAPP.$txtRight.first().append($newText2);
+            WEBPAGEAPP.$txtLeft.append($newText1);
+            WEBPAGEAPP.$txtRight.append($newText2);
             /*WEBPAGEAPP.$txtLeft.last().append($newText3);
             WEBPAGEAPP.$txtRight.last().append($newText4);
             WEBPAGEAPP.$txtLeft.last().append($newText5);
             WEBPAGEAPP.$txtRight.last().append($newText6);*/
             
             //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
-            WEBPAGEAPP.$txtLeft.clone($newText1).insertAfter($newText2).replaceWith($newText3);
-            WEBPAGEAPP.$txtRight.clone($newText2).insertAfter($newText3).replaceWith($newText4);
+            
+            WEBPAGEAPP.$txtLeft.clone().insertAfter("div.txtRight").replaceWith($newText3);
+            WEBPAGEAPP.$txtRight.clone().insertAfter($newText3).replaceWith($newText4);
+            WEBPAGEAPP.$txtLeft.clone().insertAfter($newText4).replaceWith($newText5);
+            WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);
             
             //}
             
