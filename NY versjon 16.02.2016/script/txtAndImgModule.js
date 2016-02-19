@@ -65,9 +65,9 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
-    var getLastText = function(){       
+    /*var getLastText = function(){       
         return webpageListJSON.txtList.last();
-    };
+    };*/
     
     var getNumberOfTexts = function(){
         return webpageListJSON.txtList.length - 1;
@@ -91,7 +91,7 @@ var TXTANDIMAGEMODUL = (function(){
 
     return{
         getTxt: getTxt,
-        getLastText: getLastText,
+        //getLastText: getLastText,
         getNumberOfTexts: getNumberOfTexts,
         getTxtRef: getTxtRef,
         //getNumberOfRefs: getNumberOfRefs,

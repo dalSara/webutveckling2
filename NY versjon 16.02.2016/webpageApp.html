@@ -90,7 +90,7 @@
                 WA.showStartPage();
                 //WA.setLinkOnTheLastWord();
                 //TXTANDIMAGEMODUL.getLastIndex();
-                //WA.showTxtRef();
+                WA.showTxtRef();
                 //WA.showImage();
                 //WA.showText();
                 //WA.setLinkOnTheLastWord();
@@ -108,16 +108,18 @@
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
             var $newText3 = $("<p>" + texts.txt3 + "</p>");
 
-            WA.$indexTxtLeft.prepend($newText1);
-            WA.$indexTxtRight.append($newText2);
+            WA.$indexTxtLeft.append($newText1);
+            WA.$indexTxtRight.append($newText2).insertAfter($newText1);
+            
             
             //Last word:
-            var sisteOrdArray = texts.txt3.split(" ");
+            var lastWord = texts.txt3.split(" ");
         
-            for(var i = 0; i < sisteOrdArray.length - 1; i++){
-                WA.$txtSec.append(sisteOrdArray[i] + " ");
+            for(var i = 0; i < lastWord.length - 1; i++){
+                WA.$indexTxtLeft.append(lastWord[i] + " ");
             }
-           WA.$txtSec.append("<a>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>"); //--end Last word  
+            WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
+            //--end Last word
             
         },//--end showStartPage
         
@@ -133,7 +135,7 @@
         showText: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
             //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
-            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //Hnter ut heile objektet.
+            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //Henter ut heile objektet.
             
             var $newText1 = $("<p>" + textsPage2.txt1 + "</p>");
             var $newText2 = $("<p>" + textsPage2.txt2 + "</p>");
@@ -141,10 +143,7 @@
             var $newText4 = $("<p>" + textsPage2.txt4 + "</p>");
             var $newText5 = $("<p>" + textsPage2.txt5 + "</p>");
             var $newText6 = $("<p>" + textsPage2.txt6 + "</p>");
-            
-            /*WEBPAGEAPP.$txtLeft.addClass("txtLeft");
-            WEBPAGEAPP.$txtRight.addClass("txtRight");*/
-            
+          
             //if(TXTANDIMAGEMODUL.txt1 == true){
             WEBPAGEAPP.$txtLeft.append($newText1);
             WEBPAGEAPP.$txtRight.append($newText2);
@@ -161,8 +160,7 @@
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);
             //else/if settning for å få alle sidene?
             //}
-            
-            WEBPAGEAPP.showNextRef();
+
             
         },//--end showImage
         
@@ -226,7 +224,7 @@
             $("html, body").animate({
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
-        }, //end scrollTxt
+        }/*, //end scrollTxt
         
         setLinkOnTheLastWord: function() {
             var WA = WEBPAGEAPP; 
@@ -238,7 +236,7 @@
                 WA.$txtSec.append(sisteOrdArray[i] + " ");
             }
            WA.$txtSec.append("<a href='http://aftenposten.no'>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>");   
-        } //end setLinkOnTheLastWord
+        }*/ //end setLinkOnTheLastWord
     }; //--end WEBPAGEWAPP
     
     //document.ready trigger vår WEBPAGEAPP når DOM er klart
