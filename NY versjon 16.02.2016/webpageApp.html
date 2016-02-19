@@ -241,19 +241,23 @@
             $("html, body").animate({
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
-        }/*, //end scrollTxt
+        }, //end scrollTxt
         
         setLinkOnTheLastWord: function() {
-            var WA = WEBPAGEAPP; 
+            var WA = WEBPAGEAPP;
             
-            var setningJSON = {"tekst": "Dette er en tekst"};
-            var sisteOrdArray = setningJSON.tekst.split(" ");
+            var txtIndex = WEBPAGEAPP.textIndex;
+            //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex); //Startsida
+            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //3 side
+            
+            var lastWord = textsPage2.$txtRight_6.split(" ");
         
-            for(var i = 0; i < sisteOrdArray.length; i++){
-                WA.$txtSec.append(sisteOrdArray[i] + " ");
+            for(var i = 0; i < lastWord.length - 1; i++){
+                WA.append(lastWord[i] + " ");
             }
-           WA.$txtSec.append("<a href='http://aftenposten.no'>" + sisteOrdArray[sisteOrdArray.length - 1] + "</a>");   
-        }*/ //end setLinkOnTheLastWord
+            WA.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
+        }//--end Last word
+        
     }; //--end WEBPAGEWAPP
     
     //document.ready trigger vår WEBPAGEAPP når DOM er klart

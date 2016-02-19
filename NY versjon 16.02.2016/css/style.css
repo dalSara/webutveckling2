@@ -20,17 +20,17 @@ html, body{
 
 #txtSec{
     float: left;
-    width: 1000px;
     z-index: 100;
     position: relative;
     color: rgb(255, 206, 153);
     font-size: 35px;
     line-height: 40px;
     font-family: "europa";
+    margin-left: 100px;
 }
 
 #indexTxtLeft, #indexTxtRight{
-    width: 1000px;
+    width: 800px;
     margin-bottom: 50px;
 }
 
@@ -39,8 +39,7 @@ html, body{
 }
 
 .txtLeft, .txtRight{
-   
-    position: static;
+   width: 500px;
 }
 
 #txtRefer{
