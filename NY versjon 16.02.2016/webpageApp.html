@@ -24,8 +24,14 @@
         
         <!--txtSec-->
         <section id="txtSec">
-            <div id="indexTxtLeft"></div>
-            <div id="indexTxtRight"></div>
+            <div id="indexTxtLeft" class="txtLeft"></div>
+            <div id="indexTxtRight" class="txtRight"></div>
+            
+            <!--<div class="txtLeft"></div>
+            <div class="txtRight"></div>
+            <div class="txtLeft"></div>
+            <div class="txtRight"></div>-->
+            
             <div id="txtRefer"></div>
         </section><!--end txtSec-->
         
@@ -52,9 +58,9 @@
         //HTML-objekter
         $indexTxtLeft: null,
         $indexTxtRight: null,
-        $txtRefer: null,
         $txtLeft: null,
         $txtRight: null,
+        $txtRefer: null,
         $txtSec: null,
         $imgSec: null,
         
@@ -66,15 +72,15 @@
             var setElements = function(){
                 WA.$indexTxtLeft = $("#indexTxtLeft");
                 WA.$indexTxtRight = $("#indexTxtRight");
+                WA.$txtLeft = $(".txtLeft");
+                WA.$txtRight = $(".txtRight");
                 WA.$txtRefer = $("#txtRefer");
-                WA.$txtLeft = $("#txtLeft");
-                WA.$txtRight = $("#txtRight");
                 WA.$txtSec = $("#txtSec");
                 WA.$imgSec = $("#imgSec");
             }();
             
             var setEvents = function(){
-                WA.$txtSec.mouseover(WA.scrollTxt);
+                //WA.$txtSec.mouseover(WA.scrollTxt);
                 WA.$imgSec.click(WA.showNextImg);
                 /*WA.$lastWord.click(WA.showNextImg, );*/
                 /*WA.$lastWord.click(WA.showTxt);*/
@@ -83,9 +89,8 @@
             var setPage = function(){
                 //WA.showStartPage();
                 //WA.showTxtRef();
-                //WA.showText();
                 WA.showImage();
-     
+                WA.showText();
             }();
             
         }, //--end init
@@ -105,13 +110,12 @@
         showStartPage: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
             var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
-            //var textsSide2 = TXTANDIMAGEMODUL.getTxt(0); Hnter ut heile objektet.
             
-            var $newText = $("<p>" + texts.txt1 + "</p>"); //txt1 henter vi frå lista i JSONList
+            var $newText1 = $("<p>" + texts.txt1 + "</p>"); //txt1 henter vi frå lista i JSONList
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
             var $newText3 = $("<p>" + texts.txt3 + "</p>");
 
-            WEBPAGEAPP.$indexTxtLeft.prepend($newText);
+            WEBPAGEAPP.$indexTxtLeft.prepend($newText1);
             WEBPAGEAPP.$indexTxtRight.append($newText2);
             WEBPAGEAPP.$indexTxtLeft.clone().insertAfter(WEBPAGEAPP.$indexTxtRight).replaceWith($newText3);
             
@@ -128,11 +132,30 @@
 
         showText: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
-            var text = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //Hnter ut heile objektet.
             
-            var $newText = $("<p>" + text + "</p>");
+            var $newText1 = $("<p>" + textsPage2.txt1 + "</p>");
+            var $newText2 = $("<p>" + textsPage2.txt2 + "</p>");
+            var $newText3 = $("<p>" + textsPage2.txt3 + "</p>");
+            var $newText4 = $("<p>" + textsPage2.txt4 + "</p>");
+            var $newText5 = $("<p>" + textsPage2.txt5 + "</p>");
+            var $newText6 = $("<p>" + textsPage2.txt6 + "</p>");
             
-            WEBPAGEAPP.$txtSec.append($newText);
+            //if(TXTANDIMAGEMODUL.txt1 == true){
+            WEBPAGEAPP.$txtLeft.first().append($newText1);
+            WEBPAGEAPP.$txtRight.first().append($newText2);
+            /*WEBPAGEAPP.$txtLeft.last().append($newText3);
+            WEBPAGEAPP.$txtRight.last().append($newText4);
+            WEBPAGEAPP.$txtLeft.last().append($newText5);
+            WEBPAGEAPP.$txtRight.last().append($newText6);*/
+            
+            //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
+            WEBPAGEAPP.$txtLeft.clone($newText1).insertAfter($newText2).replaceWith($newText3);
+            WEBPAGEAPP.$txtRight.clone($newText2).insertAfter($newText3).replaceWith($newText4);
+            
+            //}
+            
         },//--end showImage
         
         showImage: function(){

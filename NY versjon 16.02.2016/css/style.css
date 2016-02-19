@@ -14,7 +14,7 @@ html, body{
 /*#container img{ //I stede for background-img?
     position: absolute;
 }*/
-#txtSec, #imgSec, #txtRight{
+#txtSec, #imgSec{
     width: 600px;
 }
 
@@ -57,4 +57,3 @@ html, body{
     height: 800px;
     left: 50%;
 }
-
