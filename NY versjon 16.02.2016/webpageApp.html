@@ -155,7 +155,7 @@
             
             //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
             
-            WEBPAGEAPP.$txtLeft.clone().insertAfter("div.txtRight").replaceWith($newText3);
+            WEBPAGEAPP.$txtLeft.clone("div").insertAfter("div.txtRight").replaceWith($newText3);
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText3).replaceWith($newText4);
             WEBPAGEAPP.$txtLeft.clone().insertAfter($newText4).replaceWith($newText5);
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);
