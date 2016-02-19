@@ -96,17 +96,6 @@
         }, //--end init
         
         //App-logikk og støttefunksjoner
-        showNextImg: function(){
-            var WA = WEBPAGEAPP;
-            
-            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
-                WA.imageIndex++;
-            }else{
-                WA.imageIndex = 0;
-            } 
-            WA.showImage();
-        }, //--end showNextImage        
-        
         showStartPage: function(){
             var txtIndex = WEBPAGEAPP.textIndex;
             var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
@@ -162,7 +151,7 @@
             //else/if settning for å få alle sidene?
             //}
             
-            WEBPAGEAPP.showTxtRef();
+            WEBPAGEAPP.showNextRef();
             
             
         },//--end showImage
@@ -183,6 +172,28 @@
             WEBPAGEAPP.$imgSec.append($newImage);
             
         },//--end showImage
+        
+        showNextImg: function(){
+            var WA = WEBPAGEAPP;
+            
+            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
+                WA.imageIndex++;
+            }else{
+                WA.imageIndex = 0;
+            } 
+            WA.showImage();
+        }, //--end showNextImage 
+        
+        showNextRef: function(){
+            var WA = WEBPAGEAPP;
+            
+            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
+                WA.textRef++;
+            }else{
+                WA.textRef = 0;
+            } 
+            WA.showTxtRef();
+        }, //--end showNextRef        
         
         scrollTxt: function(){ //Korleis få denne metoden lukka?
             var distancePerSec = 50;

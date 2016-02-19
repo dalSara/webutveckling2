@@ -73,12 +73,16 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
+    var getNumberOfTexts = function(){
+        return webpageListJSON.txtList.length - 1;
+    };
+    
     var getTxtRef = function(refIndex){
         return webpageListJSON.txtList[refIndex].txtRef;
     };
     
-    var getNumberOfTexts = function(){
-        return webpageListJSON.txtList.length;
+    var getNumberOfRefs = function(){
+        return webpageListJSON.txtList.txtRef.length;
     };
     
     var getImg = function(index){
@@ -91,10 +95,10 @@ var TXTANDIMAGEMODUL = (function(){
 
     return{
         getTxt: getTxt,
-        getTxtRef: getTxtRef,
         getNumberOfTexts: getNumberOfTexts,
+        getTxtRef: getTxtRef,
+        getNumberOfRefs: getNumberOfRefs,
         getImg: getImg,
         getNumberOfImages: getNumberOfImages
     };
 }());//--end WEBPAGEIMAGESMODULE
-
