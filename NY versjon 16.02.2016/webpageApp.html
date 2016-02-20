@@ -21,7 +21,7 @@
 <body>    
     
     <div id="container">
-        
+        <div id="spotlight"></div>
         <!--txtSec-->
         <section id="txtSec">
             <!--First page-->
@@ -74,6 +74,9 @@
         $txtSec: null,
         $imgSec: null,
         
+        $spotlight: null,
+       // $container: null,
+        
         //init-funksjoner
         init: function(){
             
@@ -93,6 +96,9 @@
                 WA.$txtRefer = $("#txtRefer");
                 WA.$txtSec = $("#txtSec");
                 WA.$imgSec = $("#imgSec");
+                
+                 WA.$spotlight = $("#spotlight");
+               // WA.$container = $("#container");
             }();
             
             var setEvents = function(){
@@ -109,6 +115,7 @@
                 WA.showText();
                 WA.showImage();
                 //WA.setLinkOnTheLastWord();
+                WA.spotlightFunc();
             }();
             
         }, //--end init
@@ -273,6 +280,51 @@
             }
             WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
         }//--end Last word
+        
+        spotlightFunc: (function() {
+            var WA = WEBPAGEAPP;
+            
+            WA.$spotlight.animate({
+                height: "150px",
+                width: "150px",
+                "left": "-1577px",
+                "top": "-1930px",
+                },
+                15000,
+                'linear',
+                function(){
+
+                        var $mouseX = 700, $mouseY = 350;
+                        var $xp = 700, $yp = 350;
+
+                        $(document).mousemove(function(e){
+                        $mouseX = e.pageX;
+                        $mouseY = e.pageY;
+
+                        });
+
+                      var $loop = setInterval(function(){
+                        $xp += (($mouseX - $xp)/2);
+                        $yp += (($mouseY - $yp)/2);
+                        WA.$spotlight.css({left:($xp -2380)+'px',top:($yp -2380) +'px'});
+                        }, 10);
+
+                        }),
+                
+          WA.$spotlight.css({
+            width: "2000px",
+            height: "2000px",
+            left: "-2600px",
+            top: "-2700px",
+            borderRadius: "50%",
+            margin: "10px",
+            border: "2200px solid black",
+            position: "absolute",
+            boxShadow: "inset 10px 10px 49px 57px rgba(0,0,0,0.65)",
+            });
+    
+        })
+        // End spotlight
         
     }; //--end WEBPAGEWAPP
     
