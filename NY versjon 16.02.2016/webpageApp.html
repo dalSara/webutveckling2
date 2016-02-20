@@ -102,9 +102,9 @@
             }();
             
             var setEvents = function(){
-                WA.$txtSec.mouseover(WA.scrollTxt);
-                WA.$imgSec.click(WA.showNextImg);
-                WA.$txtRight_6.click(WA.showNextPageOfText);
+                //WA.$txtSec.mouseover(WA.scrollTxt);
+                //WA.$imgSec.click(WA.showNextImg);
+                WA.$imgSec.click(WA.showNextPageOfText);
                 WA.$txtRefer.click(WA.showNextRef);
                 /*WA.$lastWord.click(WA.showNextImg, );*/
                 /*WA.$lastWord.click(WA.showTxt);*/
@@ -134,8 +134,7 @@
 
             WA.$indexTxtLeft.append($newText1);
             WA.$indexTxtRight.append($newText2).insertAfter($newText1);
-            
-            
+                    
             //Last word:
             var lastWord = texts.txt3.split(" ");
         
@@ -164,14 +163,32 @@
             
             var txtIndex = WEBPAGEAPP.textIndex;
             //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex); //Henter ut alt fra getTxt
-            var textsPages = TXTANDIMAGEMODUL.getTxt(+1); //Henter ut heile innhold fra 2. objekt
+            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex); //Henter ut heile innhold fra 2. objekt
             
-            var $newText1 = $("<p>" + textsPages.txt1 + "</p>");
-            var $newText2 = $("<p>" + textsPages.txt2 + "</p>");
-            var $newText3 = $("<p>" + textsPages.txt3 + "</p>");
-            var $newText4 = $("<p>" + textsPages.txt4 + "</p>");
-            var $newText5 = $("<p>" + textsPages.txt5 + "</p>");
-            var $newText6 = $("<p>" + textsPages.txt6 + "</p>");
+            var $newText1 = $("<p>" + textsPages.txt1 + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prev("p").remove();
+                });
+            var $newText2 = $("<p>" + textsPages.txt2 + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prev("p").remove();
+                });
+            var $newText3 = $("<p>" + textsPages.txt3 + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prev("p").remove();
+                });
+            var $newText4 = $("<p>" + textsPages.txt4 + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prev("p").remove();
+                });
+            var $newText5 = $("<p>" + textsPages.txt5 + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prev("p").remove();
+                });
+            var $newText6 = $("<p>" + textsPages.txt6 + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prev("p").remove();
+                });
           
             if(textsPages.hasOwnProperty("txt1")){
                 WA.$txtLeft_1.append($newText1);
