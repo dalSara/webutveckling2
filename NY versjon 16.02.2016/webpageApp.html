@@ -27,7 +27,9 @@
             <!--First page-->
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
-            <div id="spotlight"></div>
+           
+            <!-- <div id="spotlight"></div> -->
+            
             <!--Next pages-->
             <div id="txtLeft_1" class="txtLeft"></div>
             <div id="txtRight_2" class="txtRight"></div>
@@ -283,6 +285,12 @@
         
         spotlightFunc: (function() {
             var WA = WEBPAGEAPP;
+            
+
+
+            $('<div><div/>', {
+            id: 'spotlight',
+            }).appendTo('html, body');
             
             WA.$spotlight.animate({
                 height: "150px",
