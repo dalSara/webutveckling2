@@ -58,6 +58,7 @@
         textRef: 0,
         imageIndex: 0,
         filstiBilder: "img/",
+        lastWord: 0,
         
         //HTML-objekter
         $indexTxtLeft: null,
@@ -102,9 +103,9 @@
             }();
             
             var setEvents = function(){
-                //WA.$txtSec.mouseover(WA.scrollTxt);
+                WA.$txtSec.mouseover(WA.scrollTxt);
                 //WA.$imgSec.click(WA.showNextImg);
-                WA.$imgSec.click(WA.showNextPageOfText);
+                //WA.$imgSec.click(WA.showNextPageOfText);
                 WA.$txtRefer.click(WA.showNextRef);
                 /*WA.$lastWord.click(WA.showNextImg, );*/
                 /*WA.$lastWord.click(WA.showTxt);*/
@@ -116,6 +117,7 @@
                 //WA.showTxtRef();
                 WA.showText();
                 WA.showImage();
+                //WA.markLastWord();
                 //WA.setLinkOnTheLastWord();
                 //WA.spotlightFunc();
             }();
@@ -141,7 +143,8 @@
             for(var i = 0; i < lastWord.length - 1; i++){
                 WA.$indexTxtLeft.append(lastWord[i] + " ");
             }
-            WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
+            WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
+                .click(WA.showText); 
             //--end Last word
             
         },//--end showStartPage
@@ -162,8 +165,7 @@
             var WA = WEBPAGEAPP;
             
             var txtIndex = WEBPAGEAPP.textIndex;
-            //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex); //Henter ut alt fra getTxt
-            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex); //Henter ut heile innhold fra 2. objekt
+            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); //Henter ut heile innhold fra 2. objekt
             
             var $newText1 = $("<p>" + textsPages.txt1 + "</p>")
                 .animate({"left": "0px", "opacity": "1"}, 1, function(){
@@ -190,34 +192,63 @@
                     $(this).prev("p").remove();
                 });
           
+            //var howManyTexts = TXTANDIMAGEMODUL.getNumberOfTexts();
+            
+            //txt1
             if(textsPages.hasOwnProperty("txt1")){
                 WA.$txtLeft_1.append($newText1);
-            } if(textsPages.hasOwnProperty("txt2")){
+            } 
+            //txt2
+            if(textsPages.hasOwnProperty("txt2")){
                 WA.$txtRight_2.append($newText2);
-            } if(textsPages.hasOwnProperty("txt3")){
-                WA.$txtLeft_3.append($newText3);
-            } if(textsPages.hasOwnProperty("txt4")){
+            } 
+            //txt3
+            if(textsPages.hasOwnProperty("txt3")){
+                //WA.$txtLeft_3.append($newText3);
+                var lastWord = textsPages.txt3.split(" "); //Split txt to get the last word
+                for(var i = 0; i < lastWord.length - 1; i++){
+                    WA.$txtLeft_3.append(lastWord[i] + " ");
+                }
+                WA.$txtLeft_3.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
+            } 
+            //txt4
+            if(textsPages.hasOwnProperty("txt4")){
                 WA.$txtRight_4.append($newText4);
-            } if(textsPages.hasOwnProperty("txt5")){
-                WA.$txtLeft_5.append($newText5);
-            } if(textsPages.hasOwnProperty("txt6")){
-                WA.$txtRight_6.append($newText6);
+            } 
+            //txt5 
+            if(textsPages.hasOwnProperty("txt5")){
+                //WA.$txtLeft_5.append($newText5);
+                var lastWord = textsPages.txt5.split(" "); //Split txt to get the last word
+                for(var i = 0; i < lastWord.length - 1; i++){
+                    WA.$txtLeft_5.append(lastWord[i] + " ");
+                }
+                WA.$txtLeft_5.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
+            } 
+            //txt6 
+            if(textsPages.hasOwnProperty("txt6")){
+                var lastWord = textsPages.txt6.split(" "); //Split txt to get the last word
+                for(var i = 0; i < lastWord.length - 1; i++){
+                    WA.$txtRight_6.append(lastWord[i] + " ");
+                }
+                WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
+                    .click(WA.showNextPageOfText);
             }
-            //WA.markLastWord();
             
         },//--end showImage
         
         markLastWord: function(){
             //Last word:
-            var placeHolderR = WEBPAGEAPP.$txtRight_6;
-            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1);
+            var WA = WEBPAGEAPP;
             
-            var lastWord = textsPage2.txt6.split(" ");
+            var txtIndex = WEBPAGEAPP.textIndex;
+            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            
+            var lastWord = texts.txt6.split(texts);
         
             for(var i = 0; i < lastWord.length - 1; i++){
-                placeHolderR.append(lastWord[i] + " ");
+                WA.$txtRight_6.append(lastWord[i] + " ");
             }
-            placeHolderR.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
+            WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
             //--end Last word
         },
         
@@ -286,22 +317,7 @@
                 //scrollTop: 0
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
-        }, //end scrollTxt
-        
-        markLastWord: function() {
-            var WA = WEBPAGEAPP;
-            
-            var txtIndex = WEBPAGEAPP.textIndex;
-            //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex); //Startsida
-            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //3 side
-            
-            var lastWord = textsPage2.$txtRight_6.split(" ");
-        
-            for(var i = 0; i < lastWord.length - 1; i++){
-                WA.$txtRight_6.append(lastWord[i] + " ");
-            }
-            WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
-        },//--end Last word
+        }, //--end scrollTxt
         
         spotlightFunc: (function() {
             var WA = WEBPAGEAPP;
@@ -346,7 +362,7 @@
             boxShadow: "inset 10px 10px 49px 57px rgba(0,0,0,0.65)",
             });
     
-        })
+        }) //--end spotlightFunc
         // End spotlight
         
     }; //--end WEBPAGEWAPP
