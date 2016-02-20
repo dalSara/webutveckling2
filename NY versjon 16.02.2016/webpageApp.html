@@ -98,12 +98,12 @@
                 WA.$txtSec = $("#txtSec");
                 WA.$imgSec = $("#imgSec");
                 
-                 WA.$spotlight = $("#spotlight");
+                WA.$spotlight = $("#spotlight");
                // WA.$container = $("#container");
             }();
             
             var setEvents = function(){
-                WA.$txtSec.mouseover(WA.scrollTxt);
+                WA.$txtLeft_1.click(WA.scrollTxt);
                 //WA.$imgSec.click(WA.showNextImg);
                 //WA.$imgSec.click(WA.showNextPageOfText);
                 WA.$txtRefer.click(WA.showNextRef);
@@ -113,12 +113,9 @@
             
             var setPage = function(){
                 //WA.showStartPage();
-                //WA.markLastWord();
-                //WA.showTxtRef();
+                //WA.mastLastWord();
                 WA.showText();
-                WA.showImage();
-                //WA.markLastWord();
-                //WA.setLinkOnTheLastWord();
+                //WA.showImage();
                 //WA.spotlightFunc();
             }();
             
@@ -146,6 +143,7 @@
             WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
                 .click(WA.showText); 
             //--end Last word
+            WA.showTxtRef();
             
         },//--end showStartPage
         
@@ -204,12 +202,12 @@
             } 
             //txt3
             if(textsPages.hasOwnProperty("txt3")){
-                //WA.$txtLeft_3.append($newText3);
-                var lastWord = textsPages.txt3.split(" "); //Split txt to get the last word
+                WA.$txtLeft_3.append($newText3);
+                /*var lastWord = textsPages.txt3.split(" "); //Split txt to get the last word
                 for(var i = 0; i < lastWord.length - 1; i++){
                     WA.$txtLeft_3.append(lastWord[i] + " ");
                 }
-                WA.$txtLeft_3.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
+                WA.$txtLeft_3.append("<a>" + lastWord[lastWord.length - 1] + "</a>");*/
             } 
             //txt4
             if(textsPages.hasOwnProperty("txt4")){
@@ -217,12 +215,12 @@
             } 
             //txt5 
             if(textsPages.hasOwnProperty("txt5")){
-                //WA.$txtLeft_5.append($newText5);
-                var lastWord = textsPages.txt5.split(" "); //Split txt to get the last word
+                WA.$txtLeft_5.append($newText5);
+                /*var lastWord = textsPages.txt5.split(" "); //Split txt to get the last word
                 for(var i = 0; i < lastWord.length - 1; i++){
                     WA.$txtLeft_5.append(lastWord[i] + " ");
                 }
-                WA.$txtLeft_5.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
+                WA.$txtLeft_5.append("<a>" + lastWord[lastWord.length - 1] + "</a>");*/
             } 
             //txt6 
             if(textsPages.hasOwnProperty("txt6")){
@@ -231,12 +229,16 @@
                     WA.$txtRight_6.append(lastWord[i] + " ");
                 }
                 WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
-                    .click(WA.showNextPageOfText);
+                    .click(WA.showNextPageOfText).next().hide();
+                /*WA.$txtRight_6.stop().append("<a onclick='WEBPAGEAPP.showNextPageOfText()'>" + lastWord[lastWord.length - 1] + "</a>")*/
+                  //  .click(WA.showNextPageOfText);
+                
             }
+            WA.showNextRef();
             
         },//--end showImage
         
-        markLastWord: function(){
+        /*mastLastWord: function(){
             //Last word:
             var WA = WEBPAGEAPP;
             
@@ -250,7 +252,7 @@
             }
             WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
             //--end Last word
-        },
+        },*/
         
         showImage: function(){  
             var index = WEBPAGEAPP.imageIndex;
