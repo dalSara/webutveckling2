@@ -21,13 +21,13 @@
 <body>    
     
     <div id="container">
-        <div id="spotlight"></div>
+        
         <!--txtSec-->
         <section id="txtSec">
             <!--First page-->
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
-            
+            <div id="spotlight"></div>
             <!--Next pages-->
             <div id="txtLeft_1" class="txtLeft"></div>
             <div id="txtRight_2" class="txtRight"></div>
@@ -41,7 +41,7 @@
         
         <!--imgSec-->
         <section id="imgSec"></section>
-    
+        
     </div><!--end container-->
     
     <!--scripts-->
@@ -279,7 +279,7 @@
                 WA.$txtRight_6.append(lastWord[i] + " ");
             }
             WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
-        }//--end Last word
+        },//--end Last word
         
         spotlightFunc: (function() {
             var WA = WEBPAGEAPP;
