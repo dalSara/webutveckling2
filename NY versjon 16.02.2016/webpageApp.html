@@ -21,15 +21,13 @@
 <body>    
     
     <div id="container">
-        
+         
         <!--txtSec-->
         <section id="txtSec">
             <!--First page-->
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
-           
-            <!-- <div id="spotlight"></div> -->
-            
+           <div id="spotlight"></div> 
             <!--Next pages-->
             <div id="txtLeft_1" class="txtLeft"></div>
             <div id="txtRight_2" class="txtRight"></div>
@@ -258,12 +256,15 @@
         scrollTxt: function(){ //Korleis få denne metoden lukka?
             var distancePerSec = 50;
             
-            var h = WEBPAGEAPP.$txtSec.height();
+            //var h = WEBPAGEAPP.$txtSec.height();
+            var h = $("html, body").height();
             var targetScrollTop = h + $(window).height();
             var distanceToTravel = targetScrollTop - $(window).scrollTop();
             var animationDuration = (distanceToTravel / distancePerSec) * 1000;
                 
             $("html, body").animate({
+            //$(WEBPAGEAPP.$txtSec).animate({
+                //scrollTop: 0
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
         }, //end scrollTxt
@@ -288,9 +289,9 @@
             
 
 
-            $('<div><div/>', {
-            id: 'spotlight',
-            }).appendTo('html, body');
+          //  $('<div><div/>', {
+        //    id: 'spotlight',
+          //  }).appendTo('html, body');
             
             WA.$spotlight.animate({
                 height: "150px",

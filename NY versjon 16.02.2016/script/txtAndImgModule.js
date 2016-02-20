@@ -98,4 +98,4 @@ var TXTANDIMAGEMODUL = (function(){
         getImg: getImg,
         getNumberOfImages: getNumberOfImages
     };
-}());//--end WEBPAGEIMAGESMODULE
+}());//--end TXTANDIMAGEMODUL
