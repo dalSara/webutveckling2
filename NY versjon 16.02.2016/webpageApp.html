@@ -104,7 +104,7 @@
             
             var setPage = function(){
                 //WA.showStartPage();
-                //WA.setLinkOnTheLastWord();
+                //WA.markLastWord();
                 //WA.showTxtRef();
                 WA.showText();
                 WA.showImage();
@@ -148,6 +148,8 @@
         },//--end showRefTxt
 
         showText: function(){
+            var WA = WEBPAGEAPP;
+            
             var txtIndex = WEBPAGEAPP.textIndex;
             //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
             var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //Henter ut heile objektet.
@@ -160,12 +162,13 @@
             var $newText6 = $("<p>" + textsPage2.txt6 + "</p>");
           
             //if(TXTANDIMAGEMODUL.txt1 == true){
-            WEBPAGEAPP.$txtLeft_1.append($newText1);
-            WEBPAGEAPP.$txtRight_2.append($newText2);
-            WEBPAGEAPP.$txtLeft_3.append($newText3);
-            WEBPAGEAPP.$txtRight_4.append($newText4);
-            WEBPAGEAPP.$txtLeft_5.append($newText5);
-            WEBPAGEAPP.$txtRight_6.append($newText6);
+            WA.$txtLeft_1.append($newText1);
+            WA.$txtRight_2.append($newText2);
+            WA.$txtLeft_3.append($newText3);
+            WA.$txtRight_4.append($newText4);
+            WA.$txtLeft_5.append($newText5);
+            WA.$txtRight_6.append($newText6);
+            //WA.markLastWord();
             
             //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
             
@@ -175,9 +178,22 @@
             WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);*/
             //else/if settning for å få alle sidene?
             //}
-
             
         },//--end showImage
+        
+        markLastWord: function(){
+            //Last word:
+            var placeHolderR = WEBPAGEAPP.$txtRight_6;
+            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1);
+            
+            var lastWord = textsPage2.txt6.split(" ");
+        
+            for(var i = 0; i < lastWord.length - 1; i++){
+                placeHolderR.append(lastWord[i] + " ");
+            }
+            placeHolderR.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
+            //--end Last word
+        },
         
         showImage: function(){  
             var index = WEBPAGEAPP.imageIndex;
@@ -243,7 +259,7 @@
             }, animationDuration, 'linear');
         }, //end scrollTxt
         
-        setLinkOnTheLastWord: function() {
+        markLastWord: function() {
             var WA = WEBPAGEAPP;
             
             var txtIndex = WEBPAGEAPP.textIndex;
@@ -253,9 +269,9 @@
             var lastWord = textsPage2.$txtRight_6.split(" ");
         
             for(var i = 0; i < lastWord.length - 1; i++){
-                WA.append(lastWord[i] + " ");
+                WA.$txtRight_6.append(lastWord[i] + " ");
             }
-            WA.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
+            WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>");
         }//--end Last word
         
     }; //--end WEBPAGEWAPP
