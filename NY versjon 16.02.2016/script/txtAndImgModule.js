@@ -29,7 +29,7 @@ var TXTANDIMAGEMODUL = (function(){
             "txt3": "Både på Silkestrå (hvor ABB vokste opp) og på Hovseter (hvor jeg vokste opp) flyttet det i løpet av 80- og 90-tallet en stor gruppe ikke-vestlige innvandrere inn i nabolaget. De aller fleste var lovlydige borgere, men det er ikke til å komme bort fra at en betydelig andel av kriminaliteten i vårt miljø ble begått av ikke-etniske nordmenn. Mange med bakgrunn fra land med Islam som hovedreligion.",
             "txt4": "Den nå selvutnevnte islamisten Arfan Bhatti var av dem som fikk det til å gå kaldest nedover vestkantryggene. «Jeg henter Arfan Bhatti på deg/ Han kjenner Arfan Bhatti» etc, var trusler man ikke tok lett på. Men var han på det tidspunktet muslim i religiøs forstand?",
             "txt5": "I sal 250 hevder Breivik at det var 20 voldskonfrontasjoner med muslimer i årene 1994/95 som utgjorde startskuddet for hans radikaliseringsprosess. Det interessante her er hvorvidt det er treffsikkert å rette sin aggresjonen mot Islam som religion på bakgrunn av disse episodene, og for å forsøke å komme til bunns i dette vil jeg fortelle litt om mine egne opplevelser fra denne tiden.",
-            "txtRef": "Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
+            "txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
         },
         //page4 - 5txt
         {
@@ -38,14 +38,14 @@ var TXTANDIMAGEMODUL = (function(){
             "txt3": "Dette fremkommer av de vitnesbyrd jeg har innhentet fra dem som kjente ham, og inntrykket forsterkes nå av å høre han snakke i retten. ABB var fra meget ung alder ekstremt opptatt av sosial status og gruppetilhørighet. Dessverre, av grunner man foreløpig bare kan spekulere i, var ikke Anders i besittelse av de sosiale egenskaper som var nødvendige for å oppnå dette",
             "txt4": "Ikke ble han noen lederskikkelse i ungdomsskolegjengen. Ikke fikk han den sentrale rollen i hiphop- og graffiti-miljøet på Oslo Vest som han i ettertid hardnakket har påstått han hadde. Ikke fikk han innpass i det ikke-etnisk norske gjengmiljøet. Ikke fikk han noen lysende akademisk karriere.",
             "txt5": "Han fikk heller ingen enestående karriere som FpU-politiker, ei heller ble han den suksessrike gründeren han ønsker å gi inntrykk av at han var.",
-            "txtRef": "Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
+            "txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
         },
         //page5 - 3txt
         {
             "txt1": "En kontekstualiserende nærlesing av Fjordmanns forfatterskap, på den ene siden og Breiviks fortolking av Fjordmann på den andre siden.",
             "txt2": "Viser at Fjordmann hadde avgjørende innflytelse på Breiviks radikalisering mellom 2008 og 2009. Ord dreper ikke, men ord fanger.",
-            "txt3": "Breivik tokk Fjordmann på ordet. Like fullt, i løpet av 2009 gikk Breivik alene over grensen mellom holdninger og handlinger,  fra begrunnelse til bevæpning, fra analyse til aksjon. Høyreekstremisme, iddeer og bevegelser i europa. S. 88 Vidar enbakk-Fjordmanns radikalisering.",
-            "txtRef": "Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2Fjordmanns radikalisering"
+            "txt3": "Breivik tok Fjordmann på ordet. Like fullt, i løpet av 2009 gikk Breivik alene over grensen mellom holdninger og handlinger,  fra begrunnelse til bevæpning, fra analyse til aksjon. Høyreekstremisme, iddeer og bevegelser i europa. S. 88 Vidar enbakk-Fjordmanns radikalisering.",
+            "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2Fjordmanns radikalisering"
         },
         //page6
         {

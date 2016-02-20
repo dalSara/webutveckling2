@@ -27,7 +27,7 @@
             <!--First page-->
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
-           <div id="spotlight"></div> 
+            <div id="spotlight"></div> 
             <!--Next pages-->
             <div id="txtLeft_1" class="txtLeft"></div>
             <div id="txtRight_2" class="txtRight"></div>
@@ -104,6 +104,8 @@
             var setEvents = function(){
                 WA.$txtSec.mouseover(WA.scrollTxt);
                 WA.$imgSec.click(WA.showNextImg);
+                WA.$txtRight_6.click(WA.showNextPageOfText);
+                WA.$txtRefer.click(WA.showNextRef);
                 /*WA.$lastWord.click(WA.showNextImg, );*/
                 /*WA.$lastWord.click(WA.showTxt);*/
             }();
@@ -115,7 +117,7 @@
                 WA.showText();
                 WA.showImage();
                 //WA.setLinkOnTheLastWord();
-                WA.spotlightFunc();
+                //WA.spotlightFunc();
             }();
             
         }, //--end init
@@ -149,7 +151,10 @@
             var refIndex = WEBPAGEAPP.textRef;
             var refs = TXTANDIMAGEMODUL.getTxtRef(refIndex);
             
-            var $newRef = $("<p>" + refs + "</p>");
+            var $newRef = $("<p>" + refs + "</p>")
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prevAll("p").remove();
+                });
             
             WEBPAGEAPP.$txtRefer.append($newRef);
         },//--end showRefTxt
@@ -158,33 +163,30 @@
             var WA = WEBPAGEAPP;
             
             var txtIndex = WEBPAGEAPP.textIndex;
-            //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
-            var textsPage2 = TXTANDIMAGEMODUL.getTxt(1); //Henter ut heile objektet.
+            //var texts = TXTANDIMAGEMODUL.getTxt(txtIndex); //Henter ut alt fra getTxt
+            var textsPages = TXTANDIMAGEMODUL.getTxt(+1); //Henter ut heile innhold fra 2. objekt
             
-            var $newText1 = $("<p>" + textsPage2.txt1 + "</p>");
-            var $newText2 = $("<p>" + textsPage2.txt2 + "</p>");
-            var $newText3 = $("<p>" + textsPage2.txt3 + "</p>");
-            var $newText4 = $("<p>" + textsPage2.txt4 + "</p>");
-            var $newText5 = $("<p>" + textsPage2.txt5 + "</p>");
-            var $newText6 = $("<p>" + textsPage2.txt6 + "</p>");
+            var $newText1 = $("<p>" + textsPages.txt1 + "</p>");
+            var $newText2 = $("<p>" + textsPages.txt2 + "</p>");
+            var $newText3 = $("<p>" + textsPages.txt3 + "</p>");
+            var $newText4 = $("<p>" + textsPages.txt4 + "</p>");
+            var $newText5 = $("<p>" + textsPages.txt5 + "</p>");
+            var $newText6 = $("<p>" + textsPages.txt6 + "</p>");
           
-            //if(TXTANDIMAGEMODUL.txt1 == true){
-            WA.$txtLeft_1.append($newText1);
-            WA.$txtRight_2.append($newText2);
-            WA.$txtLeft_3.append($newText3);
-            WA.$txtRight_4.append($newText4);
-            WA.$txtLeft_5.append($newText5);
-            WA.$txtRight_6.append($newText6);
+            if(textsPages.hasOwnProperty("txt1")){
+                WA.$txtLeft_1.append($newText1);
+            } if(textsPages.hasOwnProperty("txt2")){
+                WA.$txtRight_2.append($newText2);
+            } if(textsPages.hasOwnProperty("txt3")){
+                WA.$txtLeft_3.append($newText3);
+            } if(textsPages.hasOwnProperty("txt4")){
+                WA.$txtRight_4.append($newText4);
+            } if(textsPages.hasOwnProperty("txt5")){
+                WA.$txtLeft_5.append($newText5);
+            } if(textsPages.hasOwnProperty("txt6")){
+                WA.$txtRight_6.append($newText6);
+            }
             //WA.markLastWord();
-            
-            //WEBPAGEAPP.$txtLeft.clone().insertAfter(WEBPAGEAPP.$txtRight).replaceWith($newText3);
-            
-            /*WEBPAGEAPP.$txtLeft.clone().insertAfter($newText2).replaceWith($newText3);
-            WEBPAGEAPP.$txtRight.clone().insertAfter($newText3).replaceWith($newText4);
-            WEBPAGEAPP.$txtLeft.clone().insertAfter($newText4).replaceWith($newText5);
-            WEBPAGEAPP.$txtRight.clone().insertAfter($newText5).replaceWith($newText6);*/
-            //else/if settning for å få alle sidene?
-            //}
             
         },//--end showImage
         
@@ -234,10 +236,10 @@
         showNextPageOfText: function(){
             var WA = WEBPAGEAPP;
             
-            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
-                WA.textRef++;
+            if(WA.textIndex < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
+                WA.textIndex++;
             }else{
-                WA.textRef = 0;
+                WA.textIndex = 0;
             } 
             WA.showText();
         }, //--end showNextRef   
