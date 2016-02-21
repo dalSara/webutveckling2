@@ -51,9 +51,11 @@ a{
     text-decoration: none;
     color: rgb(255, 90, 77);
 }
+
 a:hover{
     color: rgb(50, 50, 50);
 }
+
 #imgSec{
     /*float: right;
     /*background-image: url(../img/1.jpg);*/
@@ -72,4 +74,4 @@ a:hover{
     position: absolute;
     box-shadow: inset 10px 10px 49px 57px rgba(0,0,0,0.65);
     z-Index: 100;
-            }
+}
