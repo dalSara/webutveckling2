@@ -229,7 +229,10 @@
                     WA.$txtRight_6.append(lastWord[i] + " ");
                 }
                 WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
-                    .click(WA.showNextPageOfText);
+                    .on("click", function(){
+                        $(this).WA.showNextPageOfText();               
+                    });
+                    //.click(WA.showNextPageOfText);
                 /*WA.$txtRight_6.stop().append("<a onclick='WEBPAGEAPP.showNextPageOfText()'>" + lastWord[lastWord.length - 1] + "</a>")*/
                   //  .click(WA.showNextPageOfText);
                 
