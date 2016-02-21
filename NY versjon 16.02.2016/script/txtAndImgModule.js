@@ -4,15 +4,15 @@ var TXTANDIMAGEMODUL = (function(){
 
     var webpageListJSON = { 
         
-        txtList:[
-        //indexPage - 3txt
+        txtList:[ //List for all text
+        //indexPage - 3txts
         {
             "txt1": "Ved å kalle Breivik demon fraskriver vi oss en del av ansvaret som samfunn. Det synes jeg er galt. Han er et menneske som har gjort grusomme handlinger, det må vi forholde oss til. Første gang jeg så han, på politihuset 23 juli, hadde jeg også noen bilder:", 
             "txt2": "Hvordan ser han ut, mannen som har gjort disse tingene? Man han er et menneske. Han har vokst opp i Oslo, gått på de samme skolene som oss, har en mor og en far. På et eller annet tispunkt har han hatt de samme drømmene som mange barn har – og så har det gått galt.",
             "txt3": "Så jeg tror ikke på å demoniserer ham. Da vil ikke vi som samfunn lære noe.",
             "txtRef": "- Geir Lippestad, 2012"
         },
-        //page2 - 6txt
+        //page 2 - 6txts
         {
             "txt1": "Forfatteren beskriver moren som «tilsynelatende ganske ustabil», og viser til at psykologer senere konkluderte med følgende:",
             "txt2": "«Hun skjøv gutten vekk, og trakk ham til seg på en måte som gjorde ham ganske forvirret», står det i boka.",
@@ -22,7 +22,7 @@ var TXTANDIMAGEMODUL = (function(){
             "txt6": "I begynnelsen av 1983 tok moren på nytt kontakt med familievernkontoret, og familien på tre da ble henvist til observasjon på SSBUs dagavdeling på Gaustad i tre uker, der familien ble observert av et team på åtte personer.",
             "txtRef": "- Utdrag fra boken ”En norsk tragedie” Aage Strom Borchgevik, 2012"
         },
-        //page3 - 5txt
+        //page 3 - 5txts
         {
             "txt1": "Jeg har aldri møtt ABB, men det er allikevel nok av kontaktpunkter mellom oss som gjør meg kvalifisert til å mene noe om hva jeg tror har skjedd og hvorfor.",
             "txt2": "Vi kommer begge fra venstreorienterte skillsmissehjem på Oslo Vest. Vi har begge hengt i graffiti- og kriminelle innvandrermiljøer. Begge har gått på Hartvig Nissen, og vi har begge sittet desillusjonerte på gutterommet og forbannet et samfunn som ikke har anerkjent oss som enestående eller unike bidragsytere. Men ikke minst har vi begge opplevd et Oslo i brå sosiokulturell og demografisk endring.",
@@ -31,7 +31,7 @@ var TXTANDIMAGEMODUL = (function(){
             "txt5": "I sal 250 hevder Breivik at det var 20 voldskonfrontasjoner med muslimer i årene 1994/95 som utgjorde startskuddet for hans radikaliseringsprosess. Det interessante her er hvorvidt det er treffsikkert å rette sin aggresjonen mot Islam som religion på bakgrunn av disse episodene, og for å forsøke å komme til bunns i dette vil jeg fortelle litt om mine egne opplevelser fra denne tiden.",
             "txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
         },
-        //page4 - 5txt
+        //page 4 - 5txts
         {
             "txt1": "Så hvorfor påstår Anders Behring Breivik at det var «20 episoder med muslimske kriminelle» som la grunnlaget for hans radikaliseringsprosess mot ytre høyre?",
             "txt2": "En del av svaret er å finne i hans stadige tendens til å revidere sannheten i retrospekt for å være i stand til å opprettholde sitt kontinuerlige selvbedrag, en øvelse som jevnlig repeteres gjennom ABBs ungdoms- og voksenliv.",
@@ -40,15 +40,14 @@ var TXTANDIMAGEMODUL = (function(){
             "txt5": "Han fikk heller ingen enestående karriere som FpU-politiker, ei heller ble han den suksessrike gründeren han ønsker å gi inntrykk av at han var.",
             "txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
         },
-        //page5 - 3txt
+        //page 5 - 3txts
         {
             "txt1": "En kontekstualiserende nærlesing av Fjordmanns forfatterskap, på den ene siden og Breiviks fortolking av Fjordmann på den andre siden.",
             "txt2": "Viser at Fjordmann hadde avgjørende innflytelse på Breiviks radikalisering mellom 2008 og 2009. Ord dreper ikke, men ord fanger.",
             "txt3": "Breivik tok Fjordmann på ordet. Like fullt, i løpet av 2009 gikk Breivik alene over grensen mellom holdninger og handlinger,  fra begrunnelse til bevæpning, fra analyse til aksjon. Høyreekstremisme, iddeer og bevegelser i europa. S. 88 Vidar enbakk-Fjordmanns radikalisering.",
-            "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2Fjordmanns radikalisering"
-        },
-            
-        //page6 - 6 txt
+            "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2 Fjordmanns radikalisering"
+        }, 
+        //page 6 - 6txts
         {
             "txt1": "Entusiasmen var imidlertid ikke gjensidig, og da Breivik i desember 2009 ytret ønske om å møtes personlig, ble invitasjonen avvist av Fjordmann: ",
             "txt2": "”Ikke fordi han snakket om vold, men fordi jeg synes han virket kjedelig – som en støvsugerselger.” ”Da jeg leste epostene tenkte jeg bla bla bla. Dette er tåkeprat fra en med litt for stort ego.”",
@@ -56,9 +55,9 @@ var TXTANDIMAGEMODUL = (function(){
             "txt4": "”Vi oppfattet han ikke som seriøs. Han grep ordet og mente mye, uten helt å ha hemninger. Du følte at det manglet noen motforestillinger inni hodet hans.” ",
             "txt5": "Flere har antydet at denne avvisningen kan ha vert avgjørende for Breiviks radikaliseing, kanskje tydligst psykologispesialist Erik Johansen som oberverte Breivik på Ila: ”Han har blitt avvist av idolene sine. Han ble avist av Fjordman.”",
             "txt6": "En slik psykologisering ble kategorisk tilbakevist av Breivik, som insisterte på at han ikkke var forsmådd av Fjordman: ”At jeg ble avist av Fjordmann ... grunnen til at jeg tok kontakt var for å få e-post adressen hans, jeg har aldri blitt avvist av noen i hele mitt liv.” ",
-            "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2Fjordmanns radikalisering”",    
+            "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2 Fjordmanns radikalisering”",    
          },
-        //page 7 - 6 txt
+        //page 7 - 6txts
         {
             "txt1": "- Breivik opparbeidet sitt raseri bygget på informasjon fra nettet. Det var nettet alene som radikaliserte ham. Breivik opplevde ikke noe spesielt grusomt i barndommen. ",
             "txt2": "Han hadde kanskje en litt vanskelig barndom, men ikke verre enn noen andre. Han spilte han opptil 16 timer med virtuelle voldsspill i døgnet og mistet kontakten med virkeligheten. Disse to tingene i kombinasjon tror vi førte til de grusomme handlingene 22. juli 2011.",
@@ -68,7 +67,7 @@ var TXTANDIMAGEMODUL = (function(){
             "txt6": "Et nett som speiler holdninger som kan formidles uten motforestillinger eller debatt i åpent landskap.",
             "txtRef": " - Utdrag fra KRÅDs seminar om radikalisering 2012 Sitater fra Geir Lippestad og Ole Hortemo",  
         },
-        //page 8 - 6 txt
+        //page 8 - 6txts
         {
             "txt1": "Det er mange som har skrevet om Anders Bering Breivik og andre terrorister som forklarer hvordan det ofte kan ligge personlige årsaker til grunn.",
             "txt2": "Det er mange som har skrevet om Anders Bering Breivik og andre terrorister som forklarer hvordan det ofte kan ligge personlige årsaker til grunn. ",
@@ -76,24 +75,26 @@ var TXTANDIMAGEMODUL = (function(){
             "txt4": "Man ser at disse menneskene fort kan bli veldig selektive i kilene som brukes, og leter etter bekreftelse på egne teorier.",
             "txt5": "Nettet er jo veldig lett å bruke på denne måten. Uten at nettet skal få skyllen for den her type hendelser tror jeg at isolasjon er et veldig viktig stikkord i slike saker.",
             "txt6": "Vi vet jo at Breivik isolerte seg veldig lenge.",
-            "txtRef": " - Fra samtaler på 22 juli senteret",
+            "txtRef": "- Fra samtaler på 22. juli senteret",
         }
 
     ], 
-        imgList:[
+        imgList:[ //List for images, beside the text
             {"imgSrc": "1.jpg"}, //page2
             {"imgSrc": "2.jpg"}, //page3
             {"imgSrc": "3.jpg"}, //page4
             {"imgSrc": "4.jpg"}, //page5
             {"imgSrc": "5.jpg"}, //page6
             {"imgSrc": "6.jpg"}, //page7
-            {"imgSrc": "7.jpg"}, //page8
-            {"imgSrc": "8.jpg"}, //page9
+            {"imgSrc": "7.jpg"} //page8
+    ],
+        lastImgList:[ //The last image, om the last page
+            {"imgSrc": "8.jpg"} //page9
         ]
     };
 
     var getTxt = function(txtIndex){
-        return webpageListJSON.txtList[txtIndex]; //Henter heile lista
+        return webpageListJSON.txtList[txtIndex]; //Gets the txtList
     };
     
     var getNumberOfTexts = function(){
@@ -105,11 +106,15 @@ var TXTANDIMAGEMODUL = (function(){
     };
     
     var getImg = function(index){
-        return webpageListJSON.imgList[index].imgSrc;
+        return webpageListJSON.imgList[index].imgSrc; //Gets images from imgList
     };
     
     var getNumberOfImages = function(){
         return webpageListJSON.imgList.length;
+    };
+    
+    var getLastImg = function(lastImgIndex){
+        return webpageListJSON.lastImgList[lastImgIndex].imgSrc; //Gets the last img
     };
 
     return{
@@ -117,6 +122,7 @@ var TXTANDIMAGEMODUL = (function(){
         getNumberOfTexts: getNumberOfTexts,
         getTxtRef: getTxtRef,
         getImg: getImg,
-        getNumberOfImages: getNumberOfImages
+        getNumberOfImages: getNumberOfImages,
+        getLastImg: getLastImg
     };
 }());//--end TXTANDIMAGEMODUL

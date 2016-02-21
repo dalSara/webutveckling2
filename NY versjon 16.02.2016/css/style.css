@@ -3,17 +3,17 @@ html, body{
     background-color: rgb(46, 67, 77);
     height: 100%;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar{ /*Hides the scrollbar on the page*/
     display: none;
 }
+
 #container{
     width: 1200px;
     margin: auto;
     margin-top: 80px;
 }
-/*#container img{ //I stede for background-img?
-    position: absolute;
-}*/
+
 #txtSec, #imgSec{
     width: 600px;
 }
@@ -39,7 +39,7 @@ html, body{
 }
 
 .txtLeft, .txtRight{
-   width: 500px;
+    width: 500px;
 }
 
 #txtRefer{
@@ -47,21 +47,22 @@ html, body{
     font-style: oblique;
 }
 
-a{
+a{ /*The last word om each page*/
     text-decoration: none;
     color: rgb(255, 90, 77);
 }
 
-a:hover{
-    color: rgb(50, 50, 50);
+a:hover{ /*When mouse is over the last word*/
+    color: rgb(200, 200, 200);
 }
 
 #imgSec{
-    /*float: right;
-    /*background-image: url(../img/1.jpg);*/
     position: fixed;
     height: 800px;
     left: 50%;
+}
+#lastImg img{ /*Last image, on the last page*/
+    width: 100%;
 }
 
 /*#spotlight{

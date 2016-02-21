@@ -18,17 +18,21 @@
     </script><!--end font-->
 </head>
 
-<body>    
+<body>  
+    
+    <!--Page 9-->
+    <section id="lastImg"></section><!--The last image-->
     
     <div id="container">
          
         <!--txtSec-->
         <section id="txtSec">
-            <!--First page-->
+            <!--Start page-->
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
             <div id="spotlight"></div> 
-            <!--Next pages-->
+            
+            <!--Page 2 - 8-->
             <div id="txtLeft_1" class="txtLeft"></div>
             <div id="txtRight_2" class="txtRight"></div>
             <div id="txtLeft_3" class="txtLeft"></div>
@@ -53,10 +57,11 @@
     //APP pattern (Object literal)
     var WEBPAGEAPP = {
         
-        //variabler
+        //Variabler
         textIndex: 0,
         textRef: 0,
         imageIndex: 0,
+        imageIndexLast: 0,
         filstiBilder: "img/",
         lastWord: 0,
         
@@ -74,9 +79,9 @@
         $txtRefer: null,
         $txtSec: null,
         $imgSec: null,
+        $lastImg: null,
         
         $spotlight: null,
-       // $container: null,
         
         //init-funksjoner
         init: function(){
@@ -97,9 +102,9 @@
                 WA.$txtRefer = $("#txtRefer");
                 WA.$txtSec = $("#txtSec");
                 WA.$imgSec = $("#imgSec");
+                WA.$lastImg = $("#lastImg");
                 
                 WA.$spotlight = $("#spotlight");
-               // WA.$container = $("#container");
             }();
             
              var setEvents = function(){
@@ -108,8 +113,7 @@
             
             var setPage = function(){
                 //WA.showStartPage();
-                WA.showText();
-                WA.showImage();
+                WA.showLastImage();
                 //WA.spotlightFunc();
             }();
             
@@ -119,25 +123,34 @@
         showStartPage: function(){
             var WA = WEBPAGEAPP;
             var txtIndex = WEBPAGEAPP.textIndex;
-            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
+            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex); //Get texts
             
-            var $newText1 = $("<p>" + texts.txt1 + "</p>"); //txt1 henter vi frå lista i JSONList
+            var $newText1 = $("<p>" + texts.txt1 + "</p>"); //Create a new <p> with txt1 from JSONList
             var $newText2 = $("<p>" + texts.txt2 + "</p>");
             var $newText3 = $("<p>" + texts.txt3 + "</p>");
 
-            WA.$indexTxtLeft.append($newText1);
+            WA.$indexTxtLeft.append($newText1); //Set text1 to the page
             WA.$indexTxtRight.append($newText2).insertAfter($newText1);
                     
-            //Last word:
+            //Last word - start page:
             var lastWord = texts.txt3.split(" ");
         
             for(var i = 0; i < lastWord.length - 1; i++){
                 WA.$indexTxtLeft.append(lastWord[i] + " ");
             }
-            WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
-                .click(WA.showText); 
-            //--end Last word
-            WA.showTxtRef();
+            WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>") //Setting <a> on the last word
+                .on("click", function(){ //
+                $(this).remove().stop();
+                
+                $newText1.remove().prevAll("p"); //On click, remove the prev <p>
+                $newText2.remove().prevAll("p");
+                $newText3.remove().prevAll("p");
+                
+                WA.showText(); //Show page 2
+                WA.showImage(); //Show first image
+            }); //--end last word - start page
+            
+            WA.showTxtRef(); //Show first ref
             
         },//--end showStartPage
         
@@ -157,7 +170,7 @@
             var WA = WEBPAGEAPP;
             
             var txtIndex = WEBPAGEAPP.textIndex;
-            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); //Henter ut heile innhold fra 2. objekt
+            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); //Get all text from index 1
             
             var $newText1 = $("<p>" + textsPages.txt1 + "</p>");
             var $newText2 = $("<p>" + textsPages.txt2 + "</p>");
@@ -168,7 +181,7 @@
             
             $(document).load().scrollTop(0); //Get text to top when loading new page
             
-            var last = "" 
+            var last = ""; 
             
             if(textsPages.hasOwnProperty("txt1")){
                 WA.$txtLeft_1.append($newText1);
@@ -195,7 +208,7 @@
                 last = WA.$txtRight_6
             } 
 
-            var lastWord = last.children(":first").html().trim().split(" "); //Split txt to get the last word
+            var lastWord = last.children(":first").html().trim().split(" "); //Split text to get the last word
             last.children("*").replaceWith("")  
             
             last.append("<p>")
@@ -204,10 +217,12 @@
             for(var i = 0; i < lastWord.length - 1; i++){
                     paragraph.append(lastWord[i] + " ");
             }
+            
             paragraph.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
                 .on("click", function(){
                 $(this).remove().stop();
                 
+                //Remove prev block of text
                 $newText1.remove().prevAll("p");
                 $newText2.remove().prevAll("p");
                 $newText3.remove().prevAll("p");
@@ -215,11 +230,20 @@
                 $newText5.remove().prevAll("p");
                 $newText6.remove().prevAll("p");
                 
-                WA.showNextPageOfText();
-                WA.showNextImg();
+                WA.showNextImg(); //Show next img
+                
+                if(WA.textIndex < (TXTANDIMAGEMODUL.getNumberOfTexts() - 1)){
+                    WA.showNextPageOfText(); //Add next page of text
+                    
+                } else {
+                    WA.$txtRefer.remove();
+                    WA.$imgSec.remove();
+                    
+                    WA.showLastImage();
+                }
             });
             
-            WA.showNextRef();                         
+            WA.showNextRef();
             
         },//--end showImage
         
@@ -237,97 +261,52 @@
                     $(this).prevAll("img").remove();
                 });
             
-            WA.$imgSec.append($newImage);
-            
-            WA.showNextRef();
-            
+            WA.$imgSec.append($newImage);            
         },//--end showImage
-        
-        showNextImg: function(){
-            var WA = WEBPAGEAPP;
-            
-            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
-                WA.imageIndex++;
-            }else{
-                WA.imageIndex = 0;
-            } 
-            WA.showImage();
-        }, //--end showNextImage 
         
         showNextPageOfText: function(){
             var WA = WEBPAGEAPP;
             
             if(WA.textIndex < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
                 WA.textIndex++;
-            }else{
-                WA.textIndex = 0;
-            } 
+            }
             WA.showText();
         }, //--end showNextRef   
         
-        showNextRef: function(){
+        showNextRef: function(){ 
             var WA = WEBPAGEAPP;
             
-            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
+            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts())){
                 WA.textRef++;
-            }else{
-                WA.textRef = 0;
-            } 
-            WA.showTxtRef();  
-        },//--end showImage
-        
-        showImage: function(){  
-            var WA = WEBPAGEAPP;
-            
-            var index = WA.imageIndex;
-            var filsti = WA.filstiBilder;
-            
-            var bildeSrc = TXTANDIMAGEMODUL.getImg(index);
-            
-            var $newImage = $("<img>")
-                .attr("src", filsti + bildeSrc)
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prevAll("img").remove();
-                });
-            
-            WA.$imgSec.append($newImage);
-            
-            WA.showNextRef();
-            
-        },//--end showImage
-        
-        showNextImg: function(){
-            var WA = WEBPAGEAPP;
-            
-            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
-                WA.imageIndex++;
-            }else{
-                WA.imageIndex = 0;
-            } 
-            WA.showImage();
-        }, //--end showNextImage 
-        
-        showNextPageOfText: function(){
-            var WA = WEBPAGEAPP;
-            
-            if(WA.textIndex < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
-                WA.textIndex++;
-            }else{
-                WA.textIndex = 0;
-            } 
-            WA.showText();
-        }, //--end showNextRef   
-        
-        showNextRef: function(){
-            var WA = WEBPAGEAPP;
-            
-            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
-                WA.textRef++;
-            }else{
-                WA.textRef = 0;
             } 
             WA.showTxtRef();
-        }, //--end showNextRef        
+        }, //--end showNextRef 
+                 
+        showNextImg: function(){
+            var WA = WEBPAGEAPP;
+            
+            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
+                WA.imageIndex++;
+            } 
+            WA.showImage();
+        }, //--end showNextImage 
+        
+        showLastImage: function(){  
+            var WA = WEBPAGEAPP;
+            
+            var lastImgIndex = WA.imageIndexLast;
+            var filsti = WA.filstiBilder;
+            
+            var bildeSrc = TXTANDIMAGEMODUL.getLastImg(lastImgIndex);
+            
+            var $newImage = $("<img>")
+                .attr("src", filsti + bildeSrc)
+                .animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prevAll("img").remove();
+                });
+            
+            WA.$lastImg.append($newImage);            
+        },//--end showLastImage
         
         /*scrollTxt: function(){
             var WA = WEBPAGEAPP;
