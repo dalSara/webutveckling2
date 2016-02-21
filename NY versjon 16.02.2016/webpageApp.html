@@ -27,7 +27,7 @@
             <!--First page-->
             <div id="indexTxtLeft"></div>
             <div id="indexTxtRight"></div>
-            <div id="spotlight"></div> 
+            <!--<div id="spotlight"></div> 
             <!--Next pages-->
             <div id="txtLeft_1" class="txtLeft"></div>
             <div id="txtRight_2" class="txtRight"></div>
@@ -202,9 +202,8 @@
                 WA.$txtRight_4.append($newText4);
             } 
             //txt5 
-            var textsPage3 = TXTANDIMAGEMODUL.getTxt(txtIndex + 2); // Page of txt nr. 3
-            
-            if(textsPages.hasOwnProperty("txt5") && textsPage3){
+            // && $(this).last()){
+            if(textsPages.hasOwnProperty("txt5") && $(document).last("p")){
                 //WA.$txtLeft_5.append($newText5);
                 var lastWord = textsPages.txt5.split(" "); //Split txt to get the last word
                 
@@ -222,14 +221,17 @@
                         WA.showNextPageOfText();
                         WA.showNextImg();
                     });
+            } else if(textsPages.hasOwnProperty("txt5")){
+                WA.$txtLeft_5.append($newText5);
             } 
             
             //var lastTxtValue1 = TXTANDIMAGEMODUL.getLastTxt1(); //Henter siste txt value
 
             //txt6 
             var textsPage2 = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); // Page of txt nr. 2
+            //&& textsPages == textsPage2){
             
-            if(textsPages.hasOwnProperty("txt6") && textsPage2 == 7){
+            if(textsPages.hasOwnProperty("txt6")){
                 var lastWord = textsPages.txt6.split(" "); //Split txt to get the last word
                 
                 for(var i = 0; i < lastWord.length - 1; i++){
