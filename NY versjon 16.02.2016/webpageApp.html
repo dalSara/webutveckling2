@@ -112,8 +112,8 @@
             }();
             
             var setPage = function(){
-                //WA.showStartPage();
-                WA.showLastImage();
+                WA.showStartPage();
+                //WA.showLastImage();
                 //WA.spotlightFunc();
             }();
             
@@ -139,52 +139,52 @@
                 WA.$indexTxtLeft.append(lastWord[i] + " ");
             }
             WA.$indexTxtLeft.append("<a>" + lastWord[lastWord.length - 1] + "</a>") //Setting <a> on the last word
-                .on("click", function(){ //
-                $(this).remove().stop();
+                .on("click", function(){ //When clicking on the <a>..
+                $(this).remove().stop(); //..remove this text..
                 
-                $newText1.remove().prevAll("p"); //On click, remove the prev <p>
+                $newText1.remove().prevAll("p"); //..and remove the prev <p>'s
                 $newText2.remove().prevAll("p");
                 $newText3.remove().prevAll("p");
                 
-                WA.showText(); //Show page 2
-                WA.showImage(); //Show first image
+                WA.showText(); //And show page 2..
+                WA.showImage(); //..show first image
             }); //--end last word - start page
             
-            WA.showTxtRef(); //Show first ref
+            WA.showTxtRef(); //And show first ref
             
         },//--end showStartPage
         
         showTxtRef: function(){
             var refIndex = WEBPAGEAPP.textRef;
-            var refs = TXTANDIMAGEMODUL.getTxtRef(refIndex);
+            var refs = TXTANDIMAGEMODUL.getTxtRef(refIndex); //Get the txtRefs from JSON
             
-            var $newRef = $("<p>" + refs + "</p>")
+            var $newRef = $("<p>" + refs + "</p>") //Create new <p>
                 .animate({"left": "0px", "opacity": "1"}, 1, function(){
                     $(this).prevAll("p").remove();
                 });
             
-            WEBPAGEAPP.$txtRefer.append($newRef);
+            WEBPAGEAPP.$txtRefer.append($newRef); //Add the created <p> to the div "txtRefer"
         },//--end showRefTxt
 
         showText: function(){
             var WA = WEBPAGEAPP;
             
             var txtIndex = WEBPAGEAPP.textIndex;
-            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); //Get all text from index 1
+            var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); //Get all text from JSON, from index 1 and ->
             
-            var $newText1 = $("<p>" + textsPages.txt1 + "</p>");
+            var $newText1 = $("<p>" + textsPages.txt1 + "</p>"); //Create a new <p> for each txt1, and so on..
             var $newText2 = $("<p>" + textsPages.txt2 + "</p>");
             var $newText3 = $("<p>" + textsPages.txt3 + "</p>");
             var $newText4 = $("<p>" + textsPages.txt4 + "</p>");
             var $newText5 = $("<p>" + textsPages.txt5 + "</p>");
             var $newText6 = $("<p>" + textsPages.txt6 + "</p>");
             
-            $(document).load().scrollTop(0); //Get text to top when loading new page
+            $(document).load().scrollTop(0); //Get the text to top when loading new page
             
             var last = ""; 
             
-            if(textsPages.hasOwnProperty("txt1")){
-                WA.$txtLeft_1.append($newText1);
+            if(textsPages.hasOwnProperty("txt1")){ //Adding correct text to correct div in HTML
+                WA.$txtLeft_1.append($newText1); 
                 last = WA.$txtLeft_1
             } 
             if(textsPages.hasOwnProperty("txt2")){
@@ -218,7 +218,7 @@
                     paragraph.append(lastWord[i] + " ");
             }
             
-            paragraph.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
+            paragraph.append("<a>" + lastWord[lastWord.length - 1] + "</a>") //Set link on the last word, in the last text block
                 .on("click", function(){
                 $(this).remove().stop();
                 
@@ -230,20 +230,19 @@
                 $newText5.remove().prevAll("p");
                 $newText6.remove().prevAll("p");
                 
-                WA.showNextImg(); //Show next img
+                WA.showNextImg(); //Show next image
                 
-                if(WA.textIndex < (TXTANDIMAGEMODUL.getNumberOfTexts() - 1)){
-                    WA.showNextPageOfText(); //Add next page of text
-                    
+                if(WA.textIndex < (TXTANDIMAGEMODUL.getNumberOfTexts() - 1)){ //If there are more text..
+                    WA.showNextPageOfText(); //..add next page of text
                 } else {
-                    WA.$txtRefer.remove();
-                    WA.$imgSec.remove();
+                    WA.$txtRefer.remove(); //Else remove txtRef..
+                    WA.$imgSec.remove(); //..and remove images
                     
-                    WA.showLastImage();
+                    WA.showLastImage(); //And add the last image
                 }
             });
             
-            WA.showNextRef();
+            WA.showNextRef(); //Add txtRefs under the text
             
         },//--end showImage
         
@@ -253,30 +252,30 @@
             var index = WA.imageIndex;
             var filsti = WA.filstiBilder;
             
-            var bildeSrc = TXTANDIMAGEMODUL.getImg(index);
+            var bildeSrc = TXTANDIMAGEMODUL.getImg(index); //Get images from JSONList
             
-            var $newImage = $("<img>")
+            var $newImage = $("<img>") //Create a new <img> for each imgae
                 .attr("src", filsti + bildeSrc)
                 .animate({"left": "0px", "opacity": "1"}, 1, function(){
                     $(this).prevAll("img").remove();
                 });
             
-            WA.$imgSec.append($newImage);            
+            WA.$imgSec.append($newImage); //Set images to imgSec           
         },//--end showImage
         
         showNextPageOfText: function(){
             var WA = WEBPAGEAPP;
             
-            if(WA.textIndex < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){
-                WA.textIndex++;
+            if(WA.textIndex < ( TXTANDIMAGEMODUL.getNumberOfTexts() - 1 )){ //If the are more text..
+                WA.textIndex++; //..show next
             }
-            WA.showText();
+            WA.showText(); //And create <p> of the text
         }, //--end showNextRef   
         
         showNextRef: function(){ 
             var WA = WEBPAGEAPP;
             
-            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts())){
+            if(WA.textRef < ( TXTANDIMAGEMODUL.getNumberOfTexts())){ //If the are more refs..
                 WA.textRef++;
             } 
             WA.showTxtRef();
@@ -285,7 +284,7 @@
         showNextImg: function(){
             var WA = WEBPAGEAPP;
             
-            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){
+            if(WA.imageIndex < ( TXTANDIMAGEMODUL.getNumberOfImages() - 1 ) ){ //If the are more images..
                 WA.imageIndex++;
             } 
             WA.showImage();
@@ -297,15 +296,12 @@
             var lastImgIndex = WA.imageIndexLast;
             var filsti = WA.filstiBilder;
             
-            var bildeSrc = TXTANDIMAGEMODUL.getLastImg(lastImgIndex);
+            var bildeSrc = TXTANDIMAGEMODUL.getLastImg(lastImgIndex); //Get the last image from JSON
             
             var $newImage = $("<img>")
-                .attr("src", filsti + bildeSrc)
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prevAll("img").remove();
-                });
+                .attr("src", filsti + bildeSrc);
             
-            WA.$lastImg.append($newImage);            
+            WA.$lastImg.append($newImage); //Set the image to the div            
         },//--end showLastImage
         
         /*scrollTxt: function(){
@@ -345,8 +341,7 @@
             });
         })*/ //--end spotlightFunc
     }; //--end WEBPAGEWAPP
-    
-    //document.ready trigger vår WEBPAGEAPP når DOM er klart
+
     $(function(){
         WEBPAGEAPP.init();        
     });   
