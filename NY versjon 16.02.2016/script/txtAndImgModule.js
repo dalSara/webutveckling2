@@ -29,7 +29,7 @@ var TXTANDIMAGEMODUL = (function(){
             "txt3": "Både på Silkestrå (hvor ABB vokste opp) og på Hovseter (hvor jeg vokste opp) flyttet det i løpet av 80- og 90-tallet en stor gruppe ikke-vestlige innvandrere inn i nabolaget. De aller fleste var lovlydige borgere, men det er ikke til å komme bort fra at en betydelig andel av kriminaliteten i vårt miljø ble begått av ikke-etniske nordmenn. Mange med bakgrunn fra land med Islam som hovedreligion.",
             "txt4": "Den nå selvutnevnte islamisten Arfan Bhatti var av dem som fikk det til å gå kaldest nedover vestkantryggene. «Jeg henter Arfan Bhatti på deg/ Han kjenner Arfan Bhatti» etc, var trusler man ikke tok lett på. Men var han på det tidspunktet muslim i religiøs forstand?",
             "txt5": "I sal 250 hevder Breivik at det var 20 voldskonfrontasjoner med muslimer i årene 1994/95 som utgjorde startskuddet for hans radikaliseringsprosess. Det interessante her er hvorvidt det er treffsikkert å rette sin aggresjonen mot Islam som religion på bakgrunn av disse episodene, og for å forsøke å komme til bunns i dette vil jeg fortelle litt om mine egne opplevelser fra denne tiden.",
-            //"txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
+            "txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
         },
         //page4 - 5txt
         {
@@ -96,11 +96,6 @@ var TXTANDIMAGEMODUL = (function(){
         return webpageListJSON.txtList[txtIndex]; //Henter heile lista
     };
     
-    var getLastTxt1 = function(){       
-        //return Object.keys(webpageListJSON)[webpageListJSON.txtList.length];
-        //return webpageListJSON.txtList.length - 1;
-    };
-    
     var getNumberOfTexts = function(){
         return webpageListJSON.txtList.length - 1;
     };
@@ -108,10 +103,6 @@ var TXTANDIMAGEMODUL = (function(){
     var getTxtRef = function(refIndex){
         return webpageListJSON.txtList[refIndex].txtRef;
     };
-    
-    /*var getNumberOfRefs = function(){
-        return webpageListJSON.txtList.txtRef.length; //Dette går ikkje (length)
-    };*/
     
     var getImg = function(index){
         return webpageListJSON.imgList[index].imgSrc;
@@ -123,10 +114,8 @@ var TXTANDIMAGEMODUL = (function(){
 
     return{
         getTxt: getTxt,
-        getLastTxt1: getLastTxt1,
         getNumberOfTexts: getNumberOfTexts,
         getTxtRef: getTxtRef,
-        //getNumberOfRefs: getNumberOfRefs,
         getImg: getImg,
         getNumberOfImages: getNumberOfImages
     };

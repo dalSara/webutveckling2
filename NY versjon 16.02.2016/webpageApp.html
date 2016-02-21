@@ -103,20 +103,14 @@
             }();
             
              var setEvents = function(){
-                WA.$txtSec.mouseenter(WA.scrollTxt);
-                //WA.$imgSec.click(WA.showNextImg);
-                //WA.$imgSec.click(WA.showNextPageOfText);
-                WA.$txtRefer.click(WA.showNextRef);
-                /*WA.$lastWord.click(WA.showNextImg, );*/
-                /*WA.$lastWord.click(WA.showTxt);*/
+                //WA.$txtSec.mouseenter(WA.scrollTxt);
             }();
             
             var setPage = function(){
                 //WA.showStartPage();
-                //WA.mastLastWord();
                 WA.showText();
                 WA.showImage();
-                WA.spotlightFunc();
+                //WA.spotlightFunc();
             }();
             
         }, //--end init
@@ -171,8 +165,6 @@
             var $newText4 = $("<p>" + textsPages.txt4 + "</p>");
             var $newText5 = $("<p>" + textsPages.txt5 + "</p>");
             var $newText6 = $("<p>" + textsPages.txt6 + "</p>");
-          
-            //var howManyTexts = TXTANDIMAGEMODUL.getNumberOfTexts();
             
             $(document).load().scrollTop(0); //Get text to top when loading new page
             
@@ -181,84 +173,61 @@
             if(textsPages.hasOwnProperty("txt1")){
                 WA.$txtLeft_1.append($newText1);
                 last = WA.$txtLeft_1
-                //last = $newText1
             } 
             if(textsPages.hasOwnProperty("txt2")){
                 WA.$txtRight_2.append($newText2);
                 last = WA.$txtRight_2
-                //last = $newText2
             } 
             if(textsPages.hasOwnProperty("txt3")){
                 WA.$txtLeft_3.append($newText3);
                 last = WA.$txtLeft_3
-                //last = $newText3
             } 
             if(textsPages.hasOwnProperty("txt4")){
                 WA.$txtRight_4.append($newText4);
                 last = WA.$txtRight_4                
-                //last = $newText4
             } 
             if(textsPages.hasOwnProperty("txt5")){
                 WA.$txtLeft_5.append($newText5);
                 last = WA.$txtLeft_5
-                //last = $newText5
             } 
             if(textsPages.hasOwnProperty("txt6")){
                 WA.$txtRight_6.append($newText6);
                 last = WA.$txtRight_6
-                //last = $newText6
             } 
-            
-
 
             var lastWord = last.children(":first").html().trim().split(" "); //Split txt to get the last word
-            //var lastWord = "I hate JavaScript!!!".split(" "); //Split txt to get the last word
             last.children("*").replaceWith("")  
             
-            
-            last.append("<p>") //FIXME
+            last.append("<p>")
             paragraph = last.children(":first")
             
             for(var i = 0; i < lastWord.length - 1; i++){
                     paragraph.append(lastWord[i] + " ");
             }
             paragraph.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
-                    .on("click", function(){
-                        $(this).remove().stop();
-                        
-                        $newText1.remove().prevAll("p");
-                        $newText2.remove().prevAll("p");
-                        $newText3.remove().prevAll("p");
-                        $newText4.remove().prevAll("p");
-                        $newText5.remove().prevAll("p");
-                        $newText6.remove().prevAll("p");
-                        WA.showNextPageOfText();
-                        WA.showNextImg();
-                    });
+                .on("click", function(){
+                $(this).remove().stop();
+                
+                $newText1.remove().prevAll("p");
+                $newText2.remove().prevAll("p");
+                $newText3.remove().prevAll("p");
+                $newText4.remove().prevAll("p");
+                $newText5.remove().prevAll("p");
+                $newText6.remove().prevAll("p");
+                
+                WA.showNextPageOfText();
+                WA.showNextImg();
+            });
             
             WA.showNextRef();                         
             
         },//--end showImage
         
-        /*mastLastWord: function(){
-            //Last word:
+        showImage: function(){  
             var WA = WEBPAGEAPP;
             
-            var txtIndex = WEBPAGEAPP.textIndex;
-            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
-            
-            var lastWord = texts.txt6.split(texts);
-        
-            for(var i = 0; i < lastWord.length - 1; i++){
-                WA.$txtRight_6.append(lastWord[i] + " ");
-            }
-            WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
-            //--end Last word
-        },*/
-        
-        showImage: function(){  
-            var index = WEBPAGEAPP.imageIndex;
-            var filsti = WEBPAGEAPP.filstiBilder;
+            var index = WA.imageIndex;
+            var filsti = WA.filstiBilder;
             
             var bildeSrc = TXTANDIMAGEMODUL.getImg(index);
             
@@ -268,9 +237,9 @@
                     $(this).prevAll("img").remove();
                 });
             
-            WEBPAGEAPP.$imgSec.append($newImage);
+            WA.$imgSec.append($newImage);
             
-            WEBPAGEAPP.showNextRef();
+            WA.showNextRef();
             
         },//--end showImage
         
@@ -304,29 +273,14 @@
             }else{
                 WA.textRef = 0;
             } 
-            WA.showTxtRef();
-            
+            WA.showTxtRef();  
         },//--end showImage
         
-        /*mastLastWord: function(){
-            //Last word:
+        showImage: function(){  
             var WA = WEBPAGEAPP;
             
-            var txtIndex = WEBPAGEAPP.textIndex;
-            var texts = TXTANDIMAGEMODUL.getTxt(txtIndex);
-            
-            var lastWord = texts.txt6.split(texts);
-        
-            for(var i = 0; i < lastWord.length - 1; i++){
-                WA.$txtRight_6.append(lastWord[i] + " ");
-            }
-            WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>"); 
-            //--end Last word
-        },*/
-        
-        showImage: function(){  
-            var index = WEBPAGEAPP.imageIndex;
-            var filsti = WEBPAGEAPP.filstiBilder;
+            var index = WA.imageIndex;
+            var filsti = WA.filstiBilder;
             
             var bildeSrc = TXTANDIMAGEMODUL.getImg(index);
             
@@ -336,9 +290,9 @@
                     $(this).prevAll("img").remove();
                 });
             
-            WEBPAGEAPP.$imgSec.append($newImage);
+            WA.$imgSec.append($newImage);
             
-            WEBPAGEAPP.showNextRef();
+            WA.showNextRef();
             
         },//--end showImage
         
@@ -375,53 +329,42 @@
             WA.showTxtRef();
         }, //--end showNextRef        
         
-         scrollTxt: function(){ 
-       
+        /*scrollTxt: function(){
             var WA = WEBPAGEAPP;
                 
-            WA.$txtSec.animate({
-                "top": "-500px"
-            }, 15000, 'linear');
-        }, //end scrollTxt
+            WA.$txtSec
+                .animate({
+                "top": "-500px"}, 15000, 'linear');
+        }, //--end scrollTxt
 
-       
-
-       
-        spotlightFunc: (function() {
+        /*spotlightFunc: (function() {
             var WA = WEBPAGEAPP;
-
 
             WA.$spotlight.animate({
                 "height": "150px",
                 "width": "150px",
                 "left": "-4648px",
                 "top": "-4935px",
-                },
+            },
                 15000,
                 'linear',
                 function(){
+                
+                    var $mouseX = 625, $mouseY = 315;
+                    var $xp = 625, $yp = 315;
 
-                        var $mouseX = 625, $mouseY = 315;
-                        var $xp = 625, $yp = 315;
+                    $(document).mousemove(function(e){
+                    $mouseX = e.pageX;
+                    $mouseY = e.pageY;
+                    });
 
-                        $(document).mousemove(function(e){
-                        $mouseX = e.pageX;
-                        $mouseY = e.pageY;
-
-                        });
-
-                      var $followMouse = setInterval(function(){
-                        $xp += (($mouseX - $xp)/2);
-                        $yp += (($mouseY - $yp)/2);
-                        WA.$spotlight.css({left:($xp -4860)+'px',top:($yp -4860) +'px'});
-                        }, 10);
-
-                        });
-            
-    
-        })
-        
-        
+                var $followMouse = setInterval(function(){
+                    $xp += (($mouseX - $xp)/2);
+                    $yp += (($mouseY - $yp)/2);
+                    WA.$spotlight.css({left:($xp -4860)+'px',top:($yp -4860) +'px'});
+                }, 10);
+            });
+        })*/ //--end spotlightFunc
     }; //--end WEBPAGEWAPP
     
     //document.ready trigger vår WEBPAGEAPP når DOM er klart
@@ -431,6 +374,5 @@
         
     </script>
     
-</body>
-    
+</body>  
 </html>
