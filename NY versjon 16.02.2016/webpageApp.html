@@ -115,7 +115,7 @@
                 //WA.showStartPage();
                 //WA.mastLastWord();
                 WA.showText();
-                //WA.showImage();
+                WA.showImage();
                 //WA.spotlightFunc();
             }();
             
@@ -165,32 +165,20 @@
             var txtIndex = WEBPAGEAPP.textIndex;
             var textsPages = TXTANDIMAGEMODUL.getTxt(txtIndex + 1); //Henter ut heile innhold fra 2. objekt
             
-            var $newText1 = $("<p>" + textsPages.txt1 + "</p>")
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prev("p").remove();
-                });
-            var $newText2 = $("<p>" + textsPages.txt2 + "</p>")
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prev("p").remove();
-                });
-            var $newText3 = $("<p>" + textsPages.txt3 + "</p>")
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prev("p").remove();
-                });
-            var $newText4 = $("<p>" + textsPages.txt4 + "</p>")
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prev("p").remove();
-                });
-            var $newText5 = $("<p>" + textsPages.txt5 + "</p>")
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prev("p").remove();
-                });
-            var $newText6 = $("<p>" + textsPages.txt6 + "</p>")
-                .animate({"left": "0px", "opacity": "1"}, 1, function(){
-                    $(this).prev("p").remove();
-                });
+            var $newText1 = $("<p>" + textsPages.txt1 + "</p>");
+                //Ved klikk, fjerner forje tekst og legger til neste    
+                /*.animate({"left": "0px", "opacity": "1"}, 1, function(){
+                    $(this).prevAll("p").remove();
+                });*/ 
+            var $newText2 = $("<p>" + textsPages.txt2 + "</p>");
+            var $newText3 = $("<p>" + textsPages.txt3 + "</p>");
+            var $newText4 = $("<p>" + textsPages.txt4 + "</p>");
+            var $newText5 = $("<p>" + textsPages.txt5 + "</p>");
+            var $newText6 = $("<p>" + textsPages.txt6 + "</p>");
           
             //var howManyTexts = TXTANDIMAGEMODUL.getNumberOfTexts();
+            
+            $(document).load().scrollTop(0); //Get text to top when loading new page
             
             //txt1
             if(textsPages.hasOwnProperty("txt1")){
@@ -217,22 +205,46 @@
             if(textsPages.hasOwnProperty("txt5")){
                 WA.$txtLeft_5.append($newText5);
                 /*var lastWord = textsPages.txt5.split(" "); //Split txt to get the last word
+                
                 for(var i = 0; i < lastWord.length - 1; i++){
                     WA.$txtLeft_5.append(lastWord[i] + " ");
                 }
-                WA.$txtLeft_5.append("<a>" + lastWord[lastWord.length - 1] + "</a>");*/
+                WA.$txtLeft_5.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
+                    .on("click", function(){
+                        $(this).remove().stop();
+                        //WA.prevAll("p").remove()
+                        $newText1.remove().prevAll("p");
+                        $newText2.remove().prevAll("p");
+                        $newText3.remove().prevAll("p");
+                        $newText4.remove().prevAll("p");
+                        WA.showNextPageOfText();
+                        WA.showNextImg();
+                    });*/
             } 
+            
+            var lastTxtValue1 = TXTANDIMAGEMODUL.getLastTxt1(); //Henter siste txt value
             //txt6 
-            if(textsPages.hasOwnProperty("txt6")){
+            if(textsPages.hasOwnProperty("txt6") && textsPages.hasOwnProperty(lastTxtValue1)){
+            //if(textsPages.hasOwnProperty("txt6") && $(this).nth-last-child(1)){
                 var lastWord = textsPages.txt6.split(" "); //Split txt to get the last word
+                
                 for(var i = 0; i < lastWord.length - 1; i++){
                     WA.$txtRight_6.append(lastWord[i] + " ");
                 }
                 WA.$txtRight_6.append("<a>" + lastWord[lastWord.length - 1] + "</a>")
                     .on("click", function(){
-                        $(this).WA.showNextPageOfText();               
+                        $(this).remove().stop();
+                        //WA.prevAll("p").remove()
+                        $newText1.remove().prevAll("p");
+                        $newText2.remove().prevAll("p");
+                        $newText3.remove().prevAll("p");
+                        $newText4.remove().prevAll("p");
+                        $newText5.remove().prevAll("p");
+                        WA.showNextPageOfText();
+                        WA.showNextImg();
                     });
                     //.click(WA.showNextPageOfText);
+                
                 /*WA.$txtRight_6.stop().append("<a onclick='WEBPAGEAPP.showNextPageOfText()'>" + lastWord[lastWord.length - 1] + "</a>")*/
                   //  .click(WA.showNextPageOfText);
                 
@@ -308,7 +320,7 @@
             WA.showTxtRef();
         }, //--end showNextRef        
         
-        scrollTxt: function(){ //Har funnit problemet.. jobber på sakne
+        /*scrollTxt: function(){ //Har funnit problemet.. jobber på sakne
             var distancePerSec = 50;
             
             //var h = WEBPAGEAPP.$txtSec.height();
@@ -322,7 +334,7 @@
                 //scrollTop: 0
                 scrollTop: targetScrollTop
             }, animationDuration, 'linear');
-        }, //--end scrollTxt
+        },*/ //--end scrollTxt
         
         spotlightFunc: (function() {
             var WA = WEBPAGEAPP;
