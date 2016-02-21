@@ -47,10 +47,38 @@ var TXTANDIMAGEMODUL = (function(){
             "txt3": "Breivik tok Fjordmann på ordet. Like fullt, i løpet av 2009 gikk Breivik alene over grensen mellom holdninger og handlinger,  fra begrunnelse til bevæpning, fra analyse til aksjon. Høyreekstremisme, iddeer og bevegelser i europa. S. 88 Vidar enbakk-Fjordmanns radikalisering.",
             "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2Fjordmanns radikalisering"
         },
-        //page6
+            
+        //page6 - 6 txt
         {
-            "txt1": "Test tekst."
+            "txt1": "Entusiasmen var imidlertid ikke gjensidig, og da Breivik i desember 2009 ytret ønske om å møtes personlig, ble invitasjonen avvist av Fjordmann: ",
+            "txt2": "”Ikke fordi han snakket om vold, men fordi jeg synes han virket kjedelig – som en støvsugerselger.” ”Da jeg leste epostene tenkte jeg bla bla bla. Dette er tåkeprat fra en med litt for stort ego.”",
+            "txt3": "På møtet i Docoments Venner i  desember avviste også Rustad de vidløftige planene til Breivik:",
+            "txt4": "”Vi oppfattet han ikke som seriøs. Han grep ordet og mente mye, uten helt å ha hemninger. Du følte at det manglet noen motforestillinger inni hodet hans.” ",
+            "txt5": "Flere har antydet at denne avvisningen kan ha vert avgjørende for Breiviks radikaliseing, kanskje tydligst psykologispesialist Erik Johansen som oberverte Breivik på Ila: ”Han har blitt avvist av idolene sine. Han ble avist av Fjordman.”",
+            "txt6": "En slik psykologisering ble kategorisk tilbakevist av Breivik, som insisterte på at han ikkke var forsmådd av Fjordman: ”At jeg ble avist av Fjordmann ... grunnen til at jeg tok kontakt var for å få e-post adressen hans, jeg har aldri blitt avvist av noen i hele mitt liv.” ",
+            "txtRef": "- Utdrag fra bokan Høyreekstremisme 2012, fra Vider Enbakk artikkel 2Fjordmanns radikalisering”",    
+         },
+        //page 7 - 6 txt
+        {
+            "txt1": "- Breivik opparbeidet sitt raseri bygget på informasjon fra nettet. Det var nettet alene som radikaliserte ham. Breivik opplevde ikke noe spesielt grusomt i barndommen. ",
+            "txt2": "Han hadde kanskje en litt vanskelig barndom, men ikke verre enn noen andre. Han spilte han opptil 16 timer med virtuelle voldsspill i døgnet og mistet kontakten med virkeligheten. Disse to tingene i kombinasjon tror vi førte til de grusomme handlingene 22. juli 2011.",
+            "txt3": "- Vi opplever nå en mediehverdag med nettsamfunn som sprer hat, rasisme og oppfordring til vold. Hvordan skal vi forholde oss til det vi ser på nettet?",
+            "txt4": "KRÅD ønsker å være en lyskaster ut i det interaktive nettets mørke avkroker. Et nett uten grenser.",
+            "txt5": "Et nett som sprer såkorn for ekstremistiske holdninger og potensiell vold. ",
+            "txt6": "Et nett som speiler holdninger som kan formidles uten motforestillinger eller debatt i åpent landskap.",
+            "txtRef": " - Utdrag fra KRÅDs seminar om radikalisering 2012 Sitater fra Geir Lippestad og Ole Hortemo",  
+        },
+        //page 8 - 6 txt
+        {
+            "txt1": "Det er mange som har skrevet om Anders Bering Breivik og andre terrorister som forklarer hvordan det ofte kan ligge personlige årsaker til grunn.",
+            "txt2": "Det er mange som har skrevet om Anders Bering Breivik og andre terrorister som forklarer hvordan det ofte kan ligge personlige årsaker til grunn. ",
+            "txt3": "At det for eksempel kan være en følelse av at man ikke er suksessfull nokk i det man ønsker å oppnå i arbeidslivet eller i sosiale sosiale sammenhenger. Med dette til grunn finner man etterhvert politiske holdninger som kan legitimere sine handlinger.",
+            "txt4": "Man ser at disse menneskene fort kan bli veldig selektive i kilene som brukes, og leter etter bekreftelse på egne teorier.",
+            "txt5": "Nettet er jo veldig lett å bruke på denne måten. Uten at nettet skal få skyllen for den her type hendelser tror jeg at isolasjon er et veldig viktig stikkord i slike saker.",
+            "txt6": "Vi vet jo at Breivik isolerte seg veldig lenge.",
+            "txtRef": " - Fra samtaler på 22 juli senteret",
         }
+
     ], 
         imgList:[
             {"imgSrc": "1.jpg"}, //page2
