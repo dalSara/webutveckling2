@@ -24,13 +24,12 @@
     <section id="lastImg"></section><!--The last image-->
     
     <div id="container">
-         
+    <div id="spotlight"></div>     
         <!--txtSec-->
         <section id="txtSec">
             <!--Start page-->
             <div id="indexTxtLeft"></div>
-            <div id="indexTxtRight"></div>
-            <div id="spotlight"></div> 
+            <div id="indexTxtRight"></div> 
             
             <!--Page 2 - 8-->
             <div id="txtLeft_1" class="txtLeft"></div>
@@ -108,13 +107,12 @@
             }();
             
              var setEvents = function(){
-                //WA.$txtSec.mouseenter(WA.scrollTxt);
+                 WA.$txtSec.mouseenter(WA.scrollTxt);
             }();
             
             var setPage = function(){
                 WA.showStartPage();
-                //WA.showLastImage();
-                //WA.spotlightFunc();
+                WA.spotlightFunc();
             }();
             
         }, //--end init
@@ -207,7 +205,7 @@
                 WA.$txtRight_6.append($newText6);
                 last = WA.$txtRight_6
             } 
-
+           
             var lastWord = last.children(":first").html().trim().split(" "); //Split text to get the last word
             last.children("*").replaceWith("")  
             
@@ -232,6 +230,8 @@
                 
                 WA.showNextImg(); //Show next image
                 
+                WA.resetAnim();
+                
                 if(WA.textIndex < (TXTANDIMAGEMODUL.getNumberOfTexts() - 1)){ //If there are more text..
                     WA.showNextPageOfText(); //..add next page of text
                 } else {
@@ -240,11 +240,13 @@
                     
                     WA.showLastImage(); //And add the last image
                 }
-            });
+            }),
+         
             
             WA.showNextRef(); //Add txtRefs under the text
             
         },//--end showImage
+        
         
         showImage: function(){  
             var WA = WEBPAGEAPP;
@@ -304,43 +306,68 @@
             WA.$lastImg.append($newImage); //Set the image to the div            
         },//--end showLastImage
         
-        /*scrollTxt: function(){
+        
+      resetAnim: function() { //functon to restart animation
+          $(WEBPAGEAPP.$txtSec).stop(true,true).css({
+                top: "10px",
+                 }),
+          $(WEBPAGEAPP.$spotlight).stop(true,true).css({
+                height: "2000px",
+                width: "2000px",
+                left: "-5400px",
+                top: "-5600px",
+                borderRadius: "50%",
+                border: "5100px solid black"
+                })
+            clearInterval(followMouse)
+            WEBPAGEAPP.spotlightFunc();
+            WEBPAGEAPP.scrollTxt();
+        },
+        // end resetAnim
+       
+        spotlightFunc: (function() {
             var WA = WEBPAGEAPP;
-                
-            WA.$txtSec
-                .animate({
-                "top": "-500px"}, 15000, 'linear');
-        }, //--end scrollTxt
 
-        /*spotlightFunc: (function() {
-            var WA = WEBPAGEAPP;
 
             WA.$spotlight.animate({
                 "height": "150px",
                 "width": "150px",
-                "left": "-4648px",
+                "left": "-4733px",
                 "top": "-4935px",
-            },
-                15000,
+                },
+                18000, //time for spotlight
                 'linear',
                 function(){
-                
+
                     var $mouseX = 625, $mouseY = 315;
                     var $xp = 625, $yp = 315;
 
                     $(document).mousemove(function(e){
                     $mouseX = e.pageX;
                     $mouseY = e.pageY;
+
                     });
 
-                var $followMouse = setInterval(function(){
+                    followMouse = setInterval(function(){
                     $xp += (($mouseX - $xp)/2);
                     $yp += (($mouseY - $yp)/2);
-                    WA.$spotlight.css({left:($xp -4860)+'px',top:($yp -4860) +'px'});
-                }, 10);
-            });
-        })*/ //--end spotlightFunc
-    }; //--end WEBPAGEWAPP
+                     WA.$spotlight.css({left:($xp -5220)+'px',top:($yp -5210) +'px'});
+                    }, 10);
+
+                    });
+        }), // End Spotlight function
+        
+        scrollTxt: function(){ 
+       
+            var WA = WEBPAGEAPP;
+                
+            WA.$txtSec.animate({
+                "top": "-600px"
+            }, 15000, 'linear');//time for scroll
+        }, //end scrollTxt
+        
+        
+    }; //--end WEBPAGEAPP
 
     $(function(){
         WEBPAGEAPP.init();        

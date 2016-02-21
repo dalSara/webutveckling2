@@ -65,7 +65,7 @@ a:hover{ /*When mouse is over the last word*/
     width: 100%;
 }
 
-/*#spotlight{
+#spotlight{
     height: 2000px;
     width: 2000px;
     left: -5400px;
@@ -75,5 +75,5 @@ a:hover{ /*When mouse is over the last word*/
     position: absolute;
     box-shadow: inset 10px 10px 49px 57px rgba(0,0,0,0.65);
     z-Index: 100;
-    pointer-events: none;
+    pointer-events: none; 
 }
