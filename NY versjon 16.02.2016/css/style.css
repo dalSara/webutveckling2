@@ -20,7 +20,7 @@ html, body{
 
 #txtSec{
     float: left;
-    z-index: 100;
+    z-index: 50;
     position: relative;
     color: rgb(255, 206, 153);
     font-size: 35px;

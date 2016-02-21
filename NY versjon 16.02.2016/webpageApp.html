@@ -99,11 +99,10 @@
                 WA.$imgSec = $("#imgSec");
                 
                 WA.$spotlight = $("#spotlight");
-               // WA.$container = $("#container");
             }();
             
             var setEvents = function(){
-                WA.$txtLeft_1.click(WA.scrollTxt);
+                WA.$txtSec.mouseenter(WA.scrollTxt);
                 //WA.$imgSec.click(WA.showNextImg);
                 //WA.$imgSec.click(WA.showNextPageOfText);
                 WA.$txtRefer.click(WA.showNextRef);
@@ -327,8 +326,8 @@
             WA.$spotlight.animate({
                 "height": "150px",
                 "width": "150px",
-                "left": "-4548px",
-                "top": "-4835px",
+                "left": "-4648px",
+                "top": "-4935px",
                 },
                 15000,
                 'linear',
@@ -346,7 +345,7 @@
                       var $followMouse = setInterval(function(){
                         $xp += (($mouseX - $xp)/2);
                         $yp += (($mouseY - $yp)/2);
-                        WA.$spotlight.css({left:($xp -5160)+'px',top:($yp -5160) +'px'});
+                        WA.$spotlight.css({left:($xp -4860)+'px',top:($yp -4860) +'px'});
                         }, 10);
 
                         });
