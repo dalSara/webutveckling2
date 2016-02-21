@@ -29,7 +29,7 @@ var TXTANDIMAGEMODUL = (function(){
             "txt3": "Både på Silkestrå (hvor ABB vokste opp) og på Hovseter (hvor jeg vokste opp) flyttet det i løpet av 80- og 90-tallet en stor gruppe ikke-vestlige innvandrere inn i nabolaget. De aller fleste var lovlydige borgere, men det er ikke til å komme bort fra at en betydelig andel av kriminaliteten i vårt miljø ble begått av ikke-etniske nordmenn. Mange med bakgrunn fra land med Islam som hovedreligion.",
             "txt4": "Den nå selvutnevnte islamisten Arfan Bhatti var av dem som fikk det til å gå kaldest nedover vestkantryggene. «Jeg henter Arfan Bhatti på deg/ Han kjenner Arfan Bhatti» etc, var trusler man ikke tok lett på. Men var han på det tidspunktet muslim i religiøs forstand?",
             "txt5": "I sal 250 hevder Breivik at det var 20 voldskonfrontasjoner med muslimer i årene 1994/95 som utgjorde startskuddet for hans radikaliseringsprosess. Det interessante her er hvorvidt det er treffsikkert å rette sin aggresjonen mot Islam som religion på bakgrunn av disse episodene, og for å forsøke å komme til bunns i dette vil jeg fortelle litt om mine egne opplevelser fra denne tiden.",
-            "txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
+            //"txtRef": "- Utdrag fra Sturla Haugsgjerd artikkel Sint ung Mann"
         },
         //page4 - 5txt
         {
@@ -86,6 +86,9 @@ var TXTANDIMAGEMODUL = (function(){
             {"imgSrc": "3.jpg"}, //page4
             {"imgSrc": "4.jpg"}, //page5
             {"imgSrc": "5.jpg"}, //page6
+            {"imgSrc": "6.jpg"}, //page7
+            {"imgSrc": "7.jpg"}, //page8
+            {"imgSrc": "8.jpg"}, //page9
         ]
     };
 
