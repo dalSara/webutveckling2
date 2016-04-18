@@ -3,68 +3,73 @@ html, body{
     background-color: rgb(46, 67, 77);
     height: 100%;
 }
-::-webkit-scrollbar{
-    display: none;
-}
-.container{
+
+#container{
     width: 1200px;
     margin: auto;
     margin-top: 80px;
 }
 
-.txtSec, .imgSec, .txtRight{
+#txtSec, #imgSec{
     width: 600px;
 }
 
-.txtSec{
+#txtSec{
     float: left;
-    z-index: 100;
-    position: absolute;
-}
-
-.txtRight{
-    margin-left: 200px;
-}
-
-#indexText{
-    position: absolute;
-    margin-top: 20%;
-}
-
-.indexTextLeft{
-    margin-left: 300px;
-    margin-right: 300px;
-}
-.indexTextRight{
-    margin-right: 150px;
-    margin-left: 450px;
-}
-
-.txt, .txtRef{
+    z-index: 50;
+    position: relative;
     color: rgb(255, 206, 153);
-}
-
-.txt{
     font-size: 35px;
     line-height: 40px;
     font-family: "europa";
+    margin-left: 100px;
 }
 
-.txtRef{
-    font-size: 15px;
+#indexTxtLeft, #indexTxtRight{
+    width: 800px;
+    margin-bottom: 50px;
 }
 
-.pageLinks{
+#indexTxtRight, .txtRight{
+    margin-left: 200px;
+}
+
+.txtLeft, .txtRight{
+    width: 500px;
+}
+
+#txtRefer{
+    font-size: 20px;
+    font-style: oblique;
+}
+
+a{ /*The last word om each page*/
     text-decoration: none;
     color: rgb(255, 90, 77);
 }
-.pageLinks:hover{
-    color: rgb(50, 50, 50);
+
+a:hover{ /*When mouse is over the last word*/
+    color: rgb(200, 200, 200);
 }
-.imgSec{
-    float: right;
-    background-image: url(../img/1.jpg);
+
+#imgSec{
     position: fixed;
     height: 800px;
     left: 50%;
+}
+#lastImg img{ /*Last image, on the last page*/
+    width: 100%;
+}
+
+#spotlight{
+    height: 2000px;
+    width: 2000px;
+    left: -5400px;
+    top: -5600px;
+    border-radius: 50%;
+    border: 5100px solid black;
+    position: absolute;
+    box-shadow: inset 10px 10px 49px 57px rgba(0,0,0,0.65);
+    z-Index: 100;
+    pointer-events: none;
 }
